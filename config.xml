@@ -3,18 +3,25 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.tf.ticketfiler"
-        version   = "1.1">
+        id        = "com.wz.demosite"
+	versionCode = "10"
+        version   = "1.0.0">
 
-    <name>TicketFiler</name>
+    <name>Demosite</name>
 
     <description>
-        File Toronto Parking and Traffic Tickets Online For Free!
+        A Demo App with Webfiles
     </description>
 
-    <author href="http://www.ticketfiler.com" email="ticketfilers@gmail.com">
-        TicketFiler Team
+    <author href="http://www.webzin.in" email="info@webzin.in">
+        Webzin Team
     </author>
+<platform name="ios" />
+<platform name="android" />
+<platform name="winphone" />
+	
+	
+	  <access origin="http://phonegap.com" subdomains="true" />
 
     <!--
         Enable individual API permissions here.
@@ -28,6 +35,26 @@
         permission on your app, which PhoneGap requires.
     -->
     <preference name="permissions"                value="none"/>
+ <!-- all platforms -->
+  <preference name="phonegap-version" value="cli-6.0.0" />
+  <preference name="orientation" value="landscape" />
+  <preference name="fullscreen" value="true" />
+
+  <!-- iOS only -->
+  <preference name="target-device" value="universal" />
+  <preference name="prerendered-icon" value="true" />
+  <preference name="detect-data-types" value="true" />
+  <preference name="exit-on-suspend" value="true" />
+  <preference name="deployment-target" value="7.0" />
+
+  <!-- Android only -->
+  <preference name="android-build-tool" value="ant|gradle" />
+  <preference name="android-minSdkVersion" value="10" />
+  <preference name="android-maxSdkVersion" value="15" />
+  <preference name="android-targetSdkVersion" value="12" />
+  <preference name="android-installLocation" value="auto" />
+  <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+</widget>
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="phonegap-version"           value="2.9.0" />          <!-- all: current version of PhoneGap -->
@@ -51,6 +78,7 @@
         <gap:plugin name="Example" />
         A list of available plugins are available at https://build.phonegap.com/docs/plugins
     -->
+  <splash src="splash.png" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
