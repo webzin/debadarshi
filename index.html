@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Mirrored from tevratgundogdu.com/works/ideabox-mobile-template/template/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Sep 2017 12:13:13 GMT -->
-<head>
+ <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ideabox Mobile IU Template</title>
+	<title>A2Z Services</title>
 
 	<!-- Google font file. If you want you can change. -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,900" rel="stylesheet">
@@ -19,6 +18,25 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
+	  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Now safe to use device APIs
+        setTimeout(function() {
+            navigator.splashscreen.hide();
+        }, 2000);
+    }
+
+    </script>
 </head>
 
 <body>
