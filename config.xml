@@ -5,12 +5,12 @@
     versionCode = "10"
     version     = "1.0.0" >
 
-  <name>PhoneGap Example</name>
+  <name>Webzin Demo</name>
   <description>
-      An example for phonegap build docs.
+      A demo App Wtih Htmll Files
   </description>
-  <author href="https://build.phonegap.com" email="support@phonegap.com">
-      wildabeast
+  <author href="https://www.webzin.in" email="sales@webzin.in">
+      Webzin Team
   </author>
 
   <!-- all platforms -->
