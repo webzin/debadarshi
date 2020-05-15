@@ -4,7 +4,7 @@
  <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>DR DEBADARSHI'S ADVANCED UROCARE</title>
+	<title>BOOK AN APPOINTMENT</title>
 
 	<!-- Google font file. If you want you can change. -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,900" rel="stylesheet">
@@ -65,8 +65,8 @@
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				<a class="go-back-link" href="javascript:history.back();"><i class="fa fa-arrow-left"></i></a>
-				<h1 class="page-title">DR DEBADARSHI'S ADVANCED UROCARE</h1>
-				<div class="navi-menu-button">
+				<h1 class="page-title">BOOK AN APPOINTMENT</h1>
+		  <div class="navi-menu-button">
 					<em></em>
 					<em></em>
 					<em></em>
@@ -77,16 +77,58 @@
 			<main>
 			
 				<section class="container">
-					
-					<div class="animated-text vertical-center zero-opacity">
-						<h1>
-							 <a href="index.html"><img src="icon.png" width="240"></a>
-							<br>
-							<div class="text-center" data-transation="tada" data-start-time="2000">
-                                    <a href="appointment.html" class="button circle blue">BOOK AN APPOINTMENT</a>
-							</div>
-						</h1>
+
+					<div class="form-divider"></div>
+					<div class="form-label-divider"><span>BOOK AN APPOINTMENT</span></div>
+					<div class="form-divider"></div>
+
+					<div class="form-row-group with-icons">
+						<div class="form-row no-padding">
+							<i class="fa fa-user"></i>
+							<input type="text" name="aaa" class="form-element" placeholder="Name">
+						</div>
+                        <div class="form-row no-padding">
+							<i class="fa fa-phone"></i>
+							<input type="number" name="aaa" class="form-element" placeholder="Phone">
+						</div>
+						<div class="form-row no-padding">
+							<i class="fa fa-envelope"></i>
+							<input type="email" name="aaa" class="form-element" placeholder="Email">
+						</div>
+                        <div class="form-row no-padding">
+							<i class="fa fa-language"></i>
+							<select class="form-element">
+								<option value="">Gender</option>
+								<option value="1">Male</option>
+								<option value="2">Female</option>
+							</select>
+						</div>
+                        
+						<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea class="form-element" rows="6" placeholder="Describe Your Issues"></textarea>
+                        
+						</div>
+						
+                        
+                        <div class="form-row no-padding">
+							<i class="fa fa-calendar"></i>
+							<input class="form-element"  type="datetime-local" id="birthdaytime" name="birthdaytime">
+						</div>
+                    
 					</div>
+
+					
+
+					<div class="form-divider"></div>
+
+					<div class="form-row">
+						<a href="#" class="button circle block green">Success</a>
+					</div>
+ 
+					
+
+					<div class="form-divider"></div>
 
 				</section>
 			</main>
@@ -94,15 +136,7 @@
 		</div>
 	</div>
 
-
-	<!--Page loader DOM Elements. Requared all pages-->
-	<div class="sweet-loader">
-		<div class="box">
-		  	<div class="circle1"></div>
-		  	<div class="circle2"></div>
-		  	<div class="circle3"></div>
-		</div>
-	</div>
+ 
 
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.2.1.min.js"></script>

@@ -5,16 +5,16 @@
     versionCode = "10"
     version     = "1.0.0" >
 
-  <name>Webzin Demo</name>
+  <name>DDAUC</name>
   <description>
-      A demo App Wtih Htmll Files
+     Dr Debadarshi Advanced Urocare
   </description>
   <author href="https://www.webzin.in" email="sales@webzin.in">
-      Webzin Team
+      Webzin Infotech Pvt Ltd
   </author>
 
   <!-- all platforms -->
-  <preference name="phonegap-version" value="cli-6.0.0" />
+  <preference name="phonegap-version" value="cli-9.0.0" />
   <preference name="orientation" value="portrait" />
   <preference name="fullscreen" value="true" />
 
