@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
-    id          = "com.phonegap.example"
+    id          = "com.webzin.ddauc"
     versionCode = "10"
     version     = "1.0.0" >
 
@@ -77,16 +77,7 @@
 <splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png"/>
 <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png"/>
 <!--  Landscape  -->
-<!--
-
-        <splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png"/>
-        <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png"/>
-        <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png"/>
-        <splash density="land-xhdpi" src="res/screen/android/splash-land-xhdpi.png"/>
-        <splash density="land-xxhdpi" src="res/screen/android/splash-land-xxhdpi.png"/>
-        <splash density="land-xxxhdpi" src="res/screen/android/splash-land-xxxhdpi.png"/>
-        
--->
+ 
 </platform>
     
     
