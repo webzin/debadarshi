@@ -25,7 +25,13 @@
   <preference name="exit-on-suspend" value="true" />
   <preference name="deployment-target" value="7.0" />
 
- 
+  <!-- Android only -->
+  <preference name="android-build-tool" value="ant|gradle" />
+  <preference name="android-minSdkVersion" value="10" />
+  <preference name="android-maxSdkVersion" value="15" />
+  <preference name="android-targetSdkVersion" value="12" />
+  <preference name="android-installLocation" value="auto" />
+  <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
     
     
   <!-- Icons and Splash Screens -->
