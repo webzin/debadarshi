@@ -231,3 +231,11 @@ $(document).on('click', '[data-search="open"]', function(){
 $(document).on('click', '[data-search="close"]', function(){
 	closeSearchPopup();
 });
+
+$(function(){
+$("#navbarin").load("../nav.html"); 
+}); 
+
+$(function(){
+$("#footer").load("../footer.html"); 
+}); 
