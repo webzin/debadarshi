@@ -233,9 +233,9 @@ $(document).on('click', '[data-search="close"]', function(){
 });
 
 $(function(){
-$("#navbarin").load("../nav.html"); 
+$("#navbarin").load("nav.html"); 
 }); 
 
 $(function(){
-$("#footer").load("../footer.html"); 
+$("#footer").load("footer.html"); 
 }); 
