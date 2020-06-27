@@ -123,25 +123,78 @@ body{
 /*-------------------------------------------------------------------
 [3. Navigation]
 *------------------------------------------------------------------*/
-.nav-menu{
-	position: absolute;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: 999;
-	background-color: rgba(0,0,0,0.3);
-	display: none;
+.toggle-menu {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  position: relative;
+  top: 0px;
+  float: right;
+  z-index: 1000;
 }
-nav.menu.opened{
-	left: 0;
+
+.toggle-menu i {
+  position: absolute;
+  display: block;
+  height: 3px;
+  background: #0094FC;
+  width: 30px;
+  left: 0px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
+
+.toggle-menu i:nth-child(1) {
+  top: 8px;
+}
+
+.toggle-menu i:nth-child(2) {
+  top: 16px;
+}
+
+.toggle-menu i:nth-child(3) {
+  top: 24px;
+}
+
+.toggle-menu.active i:nth-child(1) {
+  top: 16px;
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+
+.toggle-menu.active i:nth-child(2) {
+  background: transparent;
+}
+
+.toggle-menu.active i:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotateZ(-45deg);
+  transform: rotateZ(-45deg);
+}
+
+
+.menu-drawer {
+  width: 300px;
+  height: 100vh;
+  position: absolute;
+  left: -550px;
+  top: 0;
+  transition: left linear .7s;
+  z-index: 999;
+ 
+}
+
+.open {
+  left: 0px;
+  transition: left linear .7s;
+ 
+}
+
 nav.menu{
 	position: absolute;
-	left: -70%;
 	top: 0;
 	bottom: 0;
-	width: 70%;
+	width: 100%;
 	background-color: #069;
 	-webkit-transition: left 200ms cubic-bezier(0.000, 0.655, 0.000, 1); /* older webkit */
 -webkit-transition: left 200ms cubic-bezier(0.025, 0.685, 0.000, 0.990); 
@@ -213,6 +266,7 @@ nav.menu ul.main-menu>li li a{
 	border-bottom: solid 1px rgba(0,0,0,0.1);
 	font-weight: 400;
 }
+ 
 /*end of part 3----------------------------------------------------*/
 
 
@@ -313,54 +367,7 @@ header.with-search-icon .page-title{
 	left: 80px;
 	right: 50px;
 }
-.navi-menu-button{
-	width: 30px;
-	height: 30px;
-	float: right;
-	position: relative;
-	cursor: pointer;
-}
-.navi-menu-button em{
-	width: 24px;
-	height: 2px;
-	background-color: #667F97;
-	display: block;
-	position: absolute;
-	border-radius: 30px;
-	right: 0;
-
-	-webkit-transition: all 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
-   -moz-transition: all 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
-     -o-transition: all 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750); 
-        transition: all 200ms cubic-bezier(0.250, 0.250, 0.750, 0.750); /* linear */
-}
-.navi-menu-button em:nth-child(1){
-	top: 7px;
-	width: 20px;
-}
-.navi-menu-button em:nth-child(2){
-	top: 14px;
-}
-.navi-menu-button em:nth-child(3){
-	top: 21px;
-	width: 20px;
-}
-
-.navi-menu-button.focused em:nth-child(1){
-	-ms-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 14px;
-}
-.navi-menu-button.focused em:nth-child(2){
-	width: 0;
-}
-.navi-menu-button.focused em:nth-child(3){
-	-ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: 14px;
-}
+ 
 /*end of part 5----------------------------------------------------*/
 
 
@@ -369,7 +376,7 @@ header.with-search-icon .page-title{
 [6. Main]
 *------------------------------------------------------------------*/
 main{
-	margin-top: 60px;
+	margin-top: 50px;
 }
 main.no-margin{
 	margin-top: 0;
@@ -723,6 +730,7 @@ select.form-element{
 	float: left;
 	text-align: center;
 }
+
 .tab-item .tab-content .content-item{
 	display: none;
 }
@@ -768,9 +776,25 @@ select.form-element{
 	padding-bottom: 50px;
 }
 /*end of part 11----------------------------------------------------*/
-
-
-
+/*-------------------------------------------------------------------
+[a. footer]
+*------------------------------------------------------------------*/
+.tab-item .fix-width .footer-menu-item{
+	display: block;
+	float: left;
+	text-align: center;
+}
+.tab-item .footer-menu-item{
+	line-height: 40px;
+}
+.tab-item.fixed-bottom .footer-menu-item.active{
+	border-bottom:none;
+	border-top: solid 2px #069;
+	background-color: rgba(0,0,0,0.05);
+}
+.tab-item.fixed-bottom .tab-menu.only-icons .footer-menu-item{
+	font-size: 18px;
+}
 /*-------------------------------------------------------------------
 [12. Popup]
 *------------------------------------------------------------------*/
@@ -1092,6 +1116,12 @@ select.form-element{
 /*-------------------------------------------------------------------
 [16. Posts]
 *------------------------------------------------------------------*/
+.post-two-column .post-item{
+	display: block;
+	width: 45%;
+	margin: 0 2.5%;
+	float: left;
+}
 .post-item{
 	width: 100%;
 	border-radius: 3px;
@@ -1100,6 +1130,7 @@ select.form-element{
 	-webkit-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.1);
 	-moz-box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.1);
 	box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.1);
+	margin-bottom: 2%;
 }
 .post-item .post-asset{
 	border-top-left-radius: 3px;
@@ -1631,10 +1662,7 @@ select.form-element{
 [20. Contact]
 *------------------------------------------------------------------*/
 .map_container{
-	position: relative;
-	left: 0;
-	right: 0;
-	top: -10px;
+ 
 	width: 100%;
 	height: 300px;
 }
@@ -2057,6 +2085,7 @@ White 	/	.white			#FFFFFF
 .animated-text{
 	text-align: center;
 	position: relative;
+	margin-bottom: 2%;
 }
 .animated-text h1{
 	margin: 0;
@@ -2113,4 +2142,14 @@ White 	/	.white			#FFFFFF
 
 h1 .button{
 	font-size: 14px;
+}
+
+
+
+
+
+
+
+.text-center {
+    margin: 3%;
 }

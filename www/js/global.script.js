@@ -2,52 +2,13 @@
 
 $(document).ready(function(){
 
-	$('.navi-menu-button').on('click', function(e){
-		navMenuOpen();
-	});
-
-	$('.nav-menu').on('click', function(e){
-		if ($(e.target).hasClass('nav-menu')){
-			navMenuClose();
-		}
-	});
-
-	$('nav.menu ul.main-menu>li>a').on('click', function(e){
-		var that = $(this);
-		if (that.parent().find('ul:first').length)
-		{
-			e.preventDefault();
-			if (!that.parent().hasClass('active'))
-			{
-				$('nav.menu ul.main-menu ul').slideUp('fast',function(){
-					$('nav.menu ul.main-menu > li').removeClass('active');
-				});
-				
-				$('nav.menu ul li a span').removeClass('fa-angle-up').addClass('fa-angle-down');
-
-				
-				that.parent().find('ul:first').slideDown('fast',function(){
-					that.parent().addClass('active');
-				});
-
-				that.find('span').removeClass('fa-angle-down').addClass('fa-angle-up');
-			}
-			else
-			{
-				
-				that.parent().find('ul:first').slideUp('fast',function(){
-					$(this).parent().removeClass('active');
-				});
-				that.find('span').removeClass('fa-angle-up').addClass('fa-angle-down');
-			}
-		}
-		else
-		{
-			$('nav.menu ul.main-menu ul').slideUp('fast');
-			$('nav.menu ul.main-menu > li').removeClass('active');
-			that.parent().addClass('active');
-		}
-	});
+ 
+  $(".toggle-menu").click(function() {
+    $(this).toggleClass("active");
+    $('.menu-drawer').toggleClass("open");
+  });
+ 
+ 
 
 
 	$('.tab-item .fix-width .menu-item').css({'width': 100/$('.tab-item .fix-width .menu-item').length+'%'});
@@ -75,20 +36,7 @@ $(".wrapper-inline").on("scroll", function(e) {
   
 });
 
-var navMenuOpen = function(){
-	$('.navi-menu-button').addClass('focused');
-
-	$('div.nav-menu').fadeIn(50,function(e){
-		$('nav.menu').addClass('opened');
-	});
-}
-
-var navMenuClose = function(){
-	$('.navi-menu-button').removeClass('focused');
-
-	$('nav.menu').removeClass('opened');
-	$('div.nav-menu').fadeOut(200);
-}
+ 
 
 var wizardFixHeight = function(){
 	$(window).on('resize', function(e){
@@ -233,9 +181,15 @@ $(document).on('click', '[data-search="close"]', function(){
 });
 
 $(function(){
-$("#navbarin").load("nav.html"); 
+$("#navbar").load("nav.html"); 
 }); 
 
 $(function(){
+$("#loginnav").load("loginnav.html"); 
+}); 
+$(function(){
 $("#footer").load("footer.html"); 
+}); 
+$(function(){
+$("#footer-login").load("login-footer.html"); 
 }); 
