@@ -46,24 +46,44 @@
 				<section class="container">
  
 					<div class="form-divider"></div>
-					 
+					  <form action="#" data-name="Appiomentment" id="appiontment" name="appiontment">
 
 					<div class="form-row-group with-icons">
+					<div class="form-row no-padding">
+							<i class="fa fa-stethoscope"></i>
+							<select class="form-element" name="service" id="service">
+							 <option value="">Select Service</option>
+							<option selected value="Urology Cosultation">Urology Cosultation</option>	 
+							</select>
+						</div>
+						<div class="form-row no-padding">
+							<i class="fa fa-user-md"></i>
+							<select class="form-element" name="consultant" id="consultant">
+							 <option value="">Select Doctor</option>
+							<option selected value="Dr Debadarshi Rath">Dr Debadarshi Rath</option>	 
+							</select>
+						</div>
+						 
+                        <div class="form-row no-padding">
+							<i class="fa fa-calendar"></i>
+							<input class="form-element"  type="datetime-local" id="aptdaytime" name="aptdaytime">
+						</div>
+					
 						<div class="form-row no-padding">
 							<i class="fa fa-user"></i>
-							<input type="text" name="aaa" class="form-element" placeholder="Name">
+							<input type="text" name="fullname" id="fullname" class="form-element" placeholder="Name">
 						</div>
                         <div class="form-row no-padding">
 							<i class="fa fa-phone"></i>
-							<input type="number" name="aaa" class="form-element" placeholder="Phone">
+							<input type="number" name="phone" id="phone" class="form-element" placeholder="Mobile / Phone">
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-envelope"></i>
-							<input type="email" name="aaa" class="form-element" placeholder="Email">
+							<input type="email" name="email" id="email" class="form-element" placeholder="Email">
 						</div>
                         <div class="form-row no-padding">
 							<i class="fa fa-language"></i>
-							<select class="form-element">
+							<select class="form-element" name="gender" id="gender"  >
 								<option value="">Gender</option>
 								<option value="1">Male</option>
 								<option value="2">Female</option>
@@ -72,15 +92,11 @@
                         
 						<div class="form-row no-padding">
 							<i class="fa fa-edit"></i>
-								<textarea class="form-element" rows="6" placeholder="Describe Your Issues"></textarea>
+								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Describe Your Issues"></textarea>
                         
 						</div>
 						
-                        
-                        <div class="form-row no-padding">
-							<i class="fa fa-calendar"></i>
-							<input class="form-element"  type="datetime-local" id="birthdaytime" name="birthdaytime">
-						</div>
+                       
                     
 					</div>
 
@@ -89,10 +105,10 @@
 					<div class="form-divider"></div>
 
 					<div class="form-row">
-						<a href="#" class="button circle block green">Book Now</a>
+						<input type="submit" class="button circle block green" value="Book Now">
 					</div>
  
-					
+					</form>
 
 					<div class="form-divider"></div>
 
@@ -115,8 +131,9 @@
 	</div>
 
 	<!-- JQuery library file. requared all pages -->
-	<script src="js/jquery-3.2.1.min.js"></script>
-
+	<script src="js/jquery-3.5.1.min.js"></script>
+	<!-- Template Jquery Validate file. requared all pages -->
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
 

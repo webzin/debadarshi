@@ -193,3 +193,42 @@ $("#footer").load("footer.html");
 $(function(){
 $("#footer-login").load("login-footer.html"); 
 }); 
+
+
+ $('#appiontment').validate({ // initialize the plugin
+        rules: {
+            service: {
+                required: true,
+            },
+			 consultant: {
+                required: true,
+            },
+			 aptdaytime: {
+                required: true,
+            },
+			 fullname: {
+                required: true,
+            },
+			phone: {
+                required: true,
+				number: true,
+            },
+			email: {
+                required: true,
+				email:true,
+            },
+			gender: {
+                required: true,
+            },
+			
+			issues: {
+                required: true,
+            },
+			
+            building: {
+                required: true,
+            },
+			 },
+		 
+       
+    });
