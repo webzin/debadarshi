@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<!-- Mirrored from tevratgundogdu.com/works/ideabox-mobile-template/template/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Sep 2017 12:15:18 GMT -->
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,6 +14,7 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
+
 </head>
 
 <body>
@@ -26,7 +26,7 @@
 		<div class="wrapper-inline">
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
-				 <a href="index.html"><img src="icon.png" width="35" align='center'></a>
+				 <a href="home.html"><img src="icon.png" width="35" align='center'></a>
 				<h1 class="page-title">CONTACT US</h1>
 				<a class="toggle-menu" href="#">
 				<i></i>
@@ -36,47 +36,8 @@
 			</header>
 			<!-- Header area end -->
 			<!-- Page content start -->
-			<main>
-				<div id="map" class="map_container">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14964.167576927724!2d85.8210602!3d20.3398879!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x65bdce4b5b85bb82!2sDr.%20Debadarshi%20Rath%20Best%20Urologist%20in%20Bhubaneswar!5e0!3m2!1sen!2sin!4v1593171193297!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-				</div>
-
-				<div class="contact-info">
-					 
-					<h3 class="address-name">Dr Debadarshi's Advanced Urocare</h3>
-					<p class="address">Police Station, PLot No : 37, Gayatri Vihar Infront of Chandrasekharpur, Chandrasekharpur, Bhubaneswar, Odisha 751024</p>
-				</div>
-
-				<div class="contact-address">
-					<div class="contact-item">
-						<i class="fa fa-map-marker"></i> 37, Gayatri Vihar Infront of Chandrasekharpur Police Station
-					</div>
-
-					<div class="contact-item">
-						<i class="fa fa-clock-o"></i> 09:00 to 17:00 working days
-					</div>
- 
-					<div class="contact-item">
-						<i class="fa fa-whatsapp"></i> +91 977 812 3060
-					</div>
-					<div class="contact-item">
-						<i class="fa fa-phone"></i> +91 977 812 3060
-					</div>
-					<div class="contact-item">
-						<i class="fa fa-globe"></i> www.drdebadarshi.com
-					</div>
-
-					<div class="contact-item">
-						<i class="fa fa-envelope"></i> info@drdebadarshi.com
-					</div>
-				</div>
-
-				<div class="contact-short-info">
-					<h3 class="title">Short Info About Dr Debadarshi Rath</h3>
-					<p>Dr Debadarshi Rath is a well known Urologist in Odisha who has completed MCh Urology in 2013 from SCB Medical College Cuttack as the best graduate of the Batch .He has a vast experience in both adult and pediatric urology.He is keen in laparoscopic reconstructive and oncology procedures, LASER surgeries for Prostate & Stone. He is very good at endourology procedures as well as reconstructive procedures(Urethroplasty) for stricture urethra both in males and females.
-
-</p>
-				</div>
+			<main id="loaddata">
+				
 			</main>
 			<!-- Page content end -->
 		</div>
@@ -95,17 +56,23 @@
 	</div>
 
 	<!-- JQuery library file. requared all pages -->
-	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="js/jquery-3.5.1.min.js"></script>
 
  
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
-
+	<script src="js/scripts.js"></script>
+	 	 <script> 
+ 
+ 
+$(document).ready(function(){
+	$("#loaddata").load(hosturl+"data.php?act=contact"); 
+	}); 
 	 
+	
+    </script> 
 
 	
 </body>
 
-
-<!-- Mirrored from tevratgundogdu.com/works/ideabox-mobile-template/template/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Sep 2017 12:15:18 GMT -->
 </html>

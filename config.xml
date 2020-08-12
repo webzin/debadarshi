@@ -13,57 +13,131 @@ Dr Debadarshi Advanced Urocare
 Webzin Team
 </author>
 
+
+<content src="index.html" /> 
+<splash src="splash.png" />
+
 <!-- all platforms -->
 <preference name="phonegap-version" value="cli-9.0.0" />
+<preference name="SplashScreenDelay" value="5000" />
+<preference name="DisallowOverscroll" value="true" />
+<preference name="android-minSdkVersion" value="14" />
+<plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
+<plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
+<plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
+<plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
+<plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
+<plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
+<plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
+<plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
+<plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
+<plugin name="cordova-plugin-file" source="npm" spec="~4.1.1" />
+<plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.5.0" />
+<plugin name="cordova-plugin-geolocation" source="npm" spec="~2.1.0" />
+<plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.3" />
+<plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.3.0" />
+<plugin name="cordova-plugin-media" source="npm" spec="~2.2.0" />
+<plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
+<plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+<plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
+<plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
+<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+<plugin name="cordova-plugin-splashscreen" source="npm" />
 
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="android-minSdkVersion" value="14" />
-    <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1" />
-    <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
-    <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-console" source="npm" spec="~1.0.2" />
-    <plugin name="cordova-plugin-contacts" source="npm" spec="~2.0.1" />
-    <plugin name="cordova-plugin-device" source="npm" spec="~1.1.1" />
-    <plugin name="cordova-plugin-device-motion" source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-device-orientation" source="npm" spec="~1.0.2" />
-    <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-file" source="npm" spec="~4.1.1" />
-    <plugin name="cordova-plugin-file-transfer" source="npm" spec="~1.5.0" />
-    <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.1.0" />
-    <plugin name="cordova-plugin-globalization" source="npm" spec="~1.0.3" />
-    <plugin name="cordova-plugin-inappbrowser" source="npm" spec="~1.3.0" />
-    <plugin name="cordova-plugin-media" source="npm" spec="~2.2.0" />
-    <plugin name="cordova-plugin-network-information" source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
-    <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
-    <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
-    <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-	<plugin name="cordova-plugin-splashscreen" source="npm" />
- 
 
- <preference name="permissions"                value="none"/>
+<preference name="permissions"                value="none"/>
 
-    <!-- Customize your app and platform with the preference element. -->
-    <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
-    <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
-    <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
-    <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
-    <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
-    <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
-    <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
-    <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
-    <preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
-    <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
-    <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
-    <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
-    <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+<!-- Customize your app and platform with the preference element. -->
+<preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
+<preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
+<preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+<preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
+<preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
+<preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
+<preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+<preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
+<preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
+<preference name="show-splash-screen-spinner" value="true" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+<preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
+<preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
+<preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
+<preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
+<preference name="SplashScreenDelay" value="15000" />
 
-  
-<icon src="icon.png" />
+<access origin="*" />
+<allow-intent href="http://*/*" />
+<allow-intent href="https://*/*" />
+<allow-intent href="tel:*" />
+<allow-intent href="sms:*" />
+<allow-intent href="mailto:*" />
+<allow-intent href="geo:*" />
+<platform name="android">
+<allow-intent href="market:*" />
+</platform>
+<platform name="ios">
+<allow-intent href="itms:*" />
+<allow-intent href="itms-apps:*" />
+</platform>
 
-  <!-- Icons and Splash Screens -->
- <platform name="ios">
+
+<!--
+Define access to external domains.
+<access />            - a blank access tag denies access to all external resources.
+<access origin="*" /> - a wildcard access tag allows access to all external resource.
+Otherwise, you can specify specific domains:
+-->
+<access origin="http://127.0.0.1*"/> <!-- allow local pages -->
+<access origin="http://ddauc.wordpress-guru.net/" />
+
+<access origin="http://wordpress-guru.net/" subdomains="true" />
+<access origin="https://twitter.com" subdomains="true" />
+<access origin="https://facebook.com" subdomains="true" />
+<access origin="https://m.facebook.com" />
+<access origin="https://graph.facebook.com" />
+<access origin="https://api.facebook.com" />
+<access origin="*.fbcdn.net" />
+<access origin="*.akamaihd.net" />
+<access origin="https://twimg.com" subdomains="true" />
+<access origin="https://abs.twimg.com" />
+<access origin="*.twimg.com" />
+<access origin="https://google-analytics.com" subdomains="true" />
+<access origin="https://ssl.google-analytics.com" />
+<access origin="*.google-analytics.com" />
+
+<access uri="*" subdomains="true" />
+<access origin=".*"/> 
+<platform name="android">
+<preference name="SplashMaintainAspectRatio" value="true"/>
+<preference name="SplashShowOnlyFirstTime" value="true"/>
+<icon density="ldpi" src="res/icon/android/ldpi.png"/>
+<icon density="mdpi" src="res/icon/android/mdpi.png"/>
+<icon density="hdpi" src="res/icon/android/hdpi.png"/>
+<icon density="xhdpi" src="res/icon/android/xhdpi.png"/>
+<icon density="xxhdpi" src="res/icon/android/xxhdpi.png"/>
+<icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png"/>
+<!--  Portrait  -->
+<splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png"/>
+<splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png"/>
+<splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png"/>
+<splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png"/>
+<splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png"/>
+<splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png"/>
+<!--  Landscape  -->
+<!-- 
+<splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png"/>
+<splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png"/>
+<splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png"/>
+<splash density="land-xhdpi" src="res/screen/android/splash-land-xhdpi.png"/>
+<splash density="land-xxhdpi" src="res/screen/android/splash-land-xxhdpi.png"/>
+<splash density="land-xxxhdpi" src="res/screen/android/splash-land-xxxhdpi.png"/>
+-->
+
+
+
+
+<allow-intent href="market:*" />
+</platform>
+<platform name="ios">
 <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
 <icon src="res/icon/ios/icon-small.png" width="29" height="29"/>
 <icon src="res/icon/ios/icon-small@2x.png" width="58" height="58"/>
@@ -91,77 +165,32 @@ Webzin Team
 <splash src="res/screen/ios/Default@3x~iphone~comany.png"/>
 <splash src="res/screen/ios/Default@2x~ipad~anyany.png"/>
 <splash src="res/screen/ios/Default@2x~ipad~comany.png"/>
- 
+<!--  Storyboard landscape  -->
+<!-- 
+<splash src="res/screen/ios/Default@2x~iphone~comcom.png"/>
+<splash src="res/screen/ios/Default@3x~iphone~anycom.png"/>
+-->
+<!--  Legacy portrait  -->
+<!-- 
+<splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
+<splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
+<splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
+<splash src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
+<splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
+<splash src="res/screen/ios/Default-667h.png" width="750" height="1334"/>
+<splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
+-->
+<!--  Legacy landscape  -->
+<!-- 
+<splash src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/>
+<splash src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
+-->
+
+
+
+
+
+<allow-intent href="itms:*" />
+<allow-intent href="itms-apps:*" />
 </platform>
-
-<platform name="android">
-<preference name="SplashMaintainAspectRatio" value="true"/>
-<preference name="SplashShowOnlyFirstTime" value="true"/>
-<icon density="ldpi" src="res/icon/android/ldpi.png"/>
-<icon density="mdpi" src="res/icon/android/mdpi.png"/>
-<icon density="hdpi" src="res/icon/android/hdpi.png"/>
-<icon density="xhdpi" src="res/icon/android/xhdpi.png"/>
-<icon density="xxhdpi" src="res/icon/android/xxhdpi.png"/>
-<icon density="xxxhdpi" src="res/icon/android/xxxhdpi.png"/>
-<!--  Portrait  -->
-<splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png"/>
-<splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png"/>
-<splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png"/>
-<splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png"/>
-<splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png"/>
-<splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png"/>
-<!--  Landscape  -->
- 
-</platform>
-<splash src="splash.png" />
-<preference name="SplashScreenDelay" value="15000" />
-
-    <access origin="*" />
-    <allow-intent href="http://*/*" />
-    <allow-intent href="https://*/*" />
-    <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
-    <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
-    <platform name="android">
-        <allow-intent href="market:*" />
-    </platform>
-    <platform name="ios">
-        <allow-intent href="itms:*" />
-        <allow-intent href="itms-apps:*" />
-    </platform>
-
-
-	 <!--
-        Define access to external domains.
-        <access />            - a blank access tag denies access to all external resources.
-        <access origin="*" /> - a wildcard access tag allows access to all external resource.
-        Otherwise, you can specify specific domains:
-    -->
-    <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
-	<access origin="http://198.38.88.53/" />
-
-<access origin="http://198.38.88.53/" subdomains="true" />
-<access origin="https://twitter.com" subdomains="true" />
-<access origin="https://facebook.com" subdomains="true" />
-<access origin="https://m.facebook.com" />
-<access origin="https://graph.facebook.com" />
-<access origin="https://api.facebook.com" />
-<access origin="*.fbcdn.net" />
-<access origin="*.akamaihd.net" />
-<access origin="https://twimg.com" subdomains="true" />
-<access origin="https://abs.twimg.com" />
-<access origin="*.twimg.com" />
-<access origin="https://google-analytics.com" subdomains="true" />
-<access origin="https://ssl.google-analytics.com" />
-<access origin="*.google-analytics.com" />
-
-<access uri="*" subdomains="true" />
-<access origin=".*"/>
-    <!--
-        <access origin="http://phonegap.com" />                    - allow any secure requests to http://phonegap.com/
-        <access origin="http://phonegap.com" subdomains="true" />  - same as above, but including subdomains, such as http://build.phonegap.com/
-        <access origin="http://phonegap.com" browserOnly="true" /> - only allows http://phonegap.com to be opened by the child browser.
-    -->
-
 </widget>
