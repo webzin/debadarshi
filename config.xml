@@ -1,21 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"
-xmlns:gap   = "http://phonegap.com/ns/1.0"
-id          = "com.webzin.ddauc"
-versionCode = "10"
-version     = "1.0.0" >
-
-<name>DDAUC</name>
-<description>
-Dr Debadarshi Advanced Urocare
-</description>
-<author href="https://www.webzin.in" email="sales@webzin.in">
-Webzin Team
-</author>
-
-
-<content src="index.html" /> 
-<splash src="splash.png" />
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.advuro.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>ADVURO</name>
+    <description>
+       Advanced Urocare Patient Record Management
+    </description>
+    <author email="sales@webzin.in" href="https://www.webzin.in">
+        Webzin Team
+    </author>
+    <content src="index.html" /> 
+	<splash src="splash.png" />
 
 <!-- all platforms -->
 <preference name="phonegap-version" value="cli-9.0.0" />
@@ -87,7 +80,7 @@ Define access to external domains.
 Otherwise, you can specify specific domains:
 -->
 <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
-<access origin="http://ddauc.wordpress-guru.net/" />
+<access origin="http://advuro.wordpress-guru.net/" />
 
 <access origin="http://wordpress-guru.net/" subdomains="true" />
 <access origin="https://twitter.com" subdomains="true" />
