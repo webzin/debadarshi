@@ -53,7 +53,7 @@
 <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
 <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
-<preference name="SplashScreenDelay" value="15000" />
+ 
 
 <access origin="*" />
 <allow-intent href="http://*/*" />
@@ -78,9 +78,9 @@ Define access to external domains.
 Otherwise, you can specify specific domains:
 -->
 <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
-<access origin="http://advuro.wordpress-guru.net/" />
+<access origin="https://advuro.wordpress-guru.net/" />
 
-<access origin="http://wordpress-guru.net/" subdomains="true" />
+<access origin="https://wordpress-guru.net/" subdomains="true" />
 <access origin="https://twitter.com" subdomains="true" />
 <access origin="https://facebook.com" subdomains="true" />
 <access origin="https://m.facebook.com" />
