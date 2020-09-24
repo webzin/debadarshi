@@ -181,54 +181,32 @@ $(document).on('click', '[data-search="close"]', function(){
 });
 
 $(function(){
-$("#navbar").load("nav.html"); 
+	if (localStorage.login=="true")
+	{
+		$("#navbar").load("loginnav.html"); 
+	}	
+	else
+	{ 
+		$("#navbar").load("nav.html"); 
+	}
+
 }); 
 
 $(function(){
 $("#loginnav").load("loginnav.html"); 
 }); 
 $(function(){
-$("#footer").load("footer.html"); 
+	if (localStorage.login=="true")
+	{
+		$("#footer").load("login-footer.html"); 
+	}	
+	else
+	{ 
+		$("#footer").load("footer.html"); 
+	}
+
 }); 
 $(function(){
 $("#footer-login").load("login-footer.html"); 
 }); 
 
-
- $('#appiontment').validate({ // initialize the plugin
-        rules: {
-            service: {
-                required: true,
-            },
-			 consultant: {
-                required: true,
-            },
-			 aptdaytime: {
-                required: true,
-            },
-			 fullname: {
-                required: true,
-            },
-			phone: {
-                required: true,
-				number: true,
-            },
-			email: {
-                required: true,
-				email:true,
-            },
-			gender: {
-                required: true,
-            },
-			
-			issues: {
-                required: true,
-            },
-			
-            building: {
-                required: true,
-            },
-			 },
-		 
-       
-    });

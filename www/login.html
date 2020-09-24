@@ -14,6 +14,11 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
+       <script type="text/javascript">
+    var url = window.location.pathname;var filename = url.substring(url.lastIndexOf('/')+1);
+    if(localStorage.login=="true" && filename == 'login.html'){window.location.href = "profile.html";}
+    else if(localStorage.login=="false" && filename != 'login.html'){window.location.href = "login.html";}
+  </script>
 </head>
 
 <body>
@@ -23,7 +28,7 @@
 		<div class="wrapper-inline">
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
-		 <a href="home.html"><img src="icon.png" width="35" align='center'></a>
+		 <a href="index.html"><img src="icon.png" width="35" align='center'></a>
 				<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
@@ -34,22 +39,24 @@
 			<!-- Header area end -->
 			<!-- Page content start -->
 			<main>
-			
-				<section class="container">
-					<div class="form-divider">
-					
-					
-					</div>
-  
+			<div id="spinner" style=" display:none; position:fixed; top:7%; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:9999;">
+        <div style="background:#ffffff; text-align:center; vertical-align:middle; width:100%; height:100vh; ">
+             <img src="https://thumbs.gfycat.com/SparseThirstyFlyingfox-size_restricted.gif" width="40%" />    
+        </div></div>
+		<section class="container" id="verticalcenter">
+					<div class="form-divider"> </div>
 
-					<div class="form-row-group with-icons">
+					 
+					<div id="sucessMessage"> </div>
+                  <form action="#" id="signin" name="signin">
+						<div class="form-row-group with-icons">
 						<div class="form-row no-padding">
-							<i class="fa fa-envelope"></i>
-							<input type="email" name="aaa" class="form-element" placeholder="Username or Email">
+							<i class="fa fa-mobile"></i>
+							<input required type="phone" name="mobile" id="mobile" class="form-element" placeholder="9090909090">
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-lock"></i>
-							<input type="password" name="aaa" class="form-element" placeholder="Password">
+							<input type="password" name="pass" id="pass" class="form-element" placeholder="Password">
 						</div>
 					</div>
 
@@ -60,9 +67,9 @@
 					<div class="form-divider"></div>
 
 					<div class="form-row">
-						<a href="profile.html" class="button circle block green">Login</a>
+						<input type="submit" name='login' id='login'  class="button circle block green" value="Sign In">
 					</div>
-
+</form>
 					<div class="form-row txt-center">
 						Don't you have an account yet? <a href="signup.html" data-loader="show">Sign Up</a>
 					</div>
@@ -88,9 +95,11 @@
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
 
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
 
+	<script type="text/javascript" src="js/scripts.js"></script>
 	
 </body>
 

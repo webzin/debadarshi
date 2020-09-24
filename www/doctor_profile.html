@@ -14,11 +14,15 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
- 	 <script type="text/javascript">
-	var url = window.location.pathname;
+
+	 <script type="text/javascript">
+ 
+    var url = window.location.pathname;
     var filename = url.substring(url.lastIndexOf('/') + 1);
-    if (localStorage.ut == "D") { window.location.href = "doctor_profile.html"; }  
-	 else if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
+    if (localStorage.ut == "P") {
+        window.location.href = "profile.html";
+		}  
+ 
  
  </script> 
  
@@ -55,88 +59,77 @@
 								<h1 class="author-name" id="name"></h1>
 								<h2 class="author-name">(<span id="gender"></span> / <span id="age"></span> Years)</h2>
 								<strong class="author-desc"><span id="mobile"></span></strong>
-								 
-								<div class="author-number">
-									<div>
-									<i class="fa fa-calendar"></i>
-										<span>49</span>APPOINTMENTS
-									</div>
-									<div>
-									<i class="fa fa-calendar"></i>
-										<span>1.425</span>Health Records
-									</div>
-									<div>
-									<i class="fa fa-calendar"></i>
-										<span>10</span>Consultations
-									</div>
-								</div>
-								 
-							</div>
+								
+							 </div>
 						</div>
 					</div>
 					<!-- AUTHOR ITEM END -->
+							<div class="form-divider"></div>
+						 <div class="form-divider"></div>
 
 				 
 
-						<div class="form-divider"></div>
-						 <div class="form-divider"></div>
-
-						<div class="list-box">
+						<div class="list-box half-box">
 							<a href="my-appointments.html" class="list-item">
-								<i class="fa fa-calendar"></i>
-								<em class="seperate"></em>
-								<span class="list-item-title">MY APPOINTMENTS</span>
+								<i class="fa fa-bar-chart"></i>
+								<span class="list-item-title">Appiontments</span>
 							</a>
 						</div>
-
-						<div class="list-box">
-							<a href="user-appointment.html" class="list-item">
-								<i class="fa fa-edit"></i>
-								<em class="seperate"></em>
-								<span class="list-item-title">BOOK AN APPOINTMENT</span>
+	<div class="list-box half-box">
+							<a href="patients-list.html" class="list-item">
+								<i class="fa fa-vcard-o"></i>
+								<span class="list-item-title">Patients List</span>
 							</a>
 						</div>
-
-						<div class="list-box">
-							<a href="my-consultations.html" class="list-item">
-								<i class="fa fa-medkit"></i>
-								<em class="seperate"></em>
-								<span class="list-item-title">MY CONSULTATIONS</span>
-							</a>
-						</div>
-
-						<div class="list-box">
+						<div class="list-box half-box">
 							<a href="my-health-records.html" class="list-item">
-								<i class="fa fa-cloud-download"></i>
-								<em class="seperate"></em>
-								<span class="list-item-title">MY HEALTH RECORDS</span>
+								<i class="fa fa-sticky-note-o"></i>
+								<span class="list-item-title">Health Records</span>
 							</a>
 						</div>
 
-						 
+						<div class="list-box half-box">
+							<a href="prescriptions.html" class="list-item green">
+								<i class="fa fa-pencil-square-o"></i>
+								<span class="list-item-title">Prescriptions</span>
+							</a>
+						</div>
 
-						<div class="list-box">
+						<div class="list-box half-box">
+							<a href="#" class="list-item">
+								<i class="fa fa-cloud-download"></i>
+								<span class="list-item-title">Documents</span>
+							</a>
+						</div>
+
+						<div class="list-box half-box">
+							<a href="my-consultations.html" class="list-item">
+								<i class="fa fa-file-word-o"></i>
+								<span class="list-item-title">Consultations</span>
+							</a>
+						</div>
+
+						<div class="list-box half-box">
 							<a href="my-communications.html" class="list-item">
 								<i class="fa fa-envelope"></i>
-								<em class="seperate"></em>
-								<span class="list-item-title">MY COMMUNICATIONS</span>
-							</a>
-						</div>
-						<div class="list-box">
-							<a href="edit-profile.html" class="list-item">
-								<i class="fa fa-user"></i>
-								<em class="seperate"></em>
-								<span class="list-item-title">MY PROFILE</span>
+								<span class="list-item-title">Messages</span>
 							</a>
 						</div>
 
-						<div class="list-box">
-							<a id="signout" class="list-item">
-								<i class="fa fa-sign-out"></i>
-								<em class="seperate"></em>
-								<span class="list-item-title">SIGNOUT</span>
+					 
+
+					 
+					
+
+						<div class="list-box half-box">
+							<a href="edit-profile-doctor.html" class="list-item">
+								<i class="fa fa-cog"></i>
+								<span class="list-item-title">Settings</span>
 							</a>
 						</div>
+
+
+				 
 						 
 				</section>
 			</main>

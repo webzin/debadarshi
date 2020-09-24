@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Dr Debadarshi's Advanced Urocare</title>	
+<title>Dr Debadarshi's Advanced Urocare</title>
 
 	<!-- Google font file. If you want you can change. -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet">
@@ -13,21 +13,20 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
- 
 </head>
 
 <body>
 	
 	<div class="wrapper">
-		 <div id="navbar">		</div>
-			  
-		 
+		<div id="navbar">
+			 
+		</div>
 		<div class="wrapper-inline">
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				 <a href="index.html"><img src="icon.png" width="35" align='center'></a>
-				<h1 class="page-title">Appiontment List</h1>
-				<a class="toggle-menu" href="#">
+				<h1 class="page-title">ACTIVATE YOUR ACCOUNT</h1>
+			<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
 				<i></i>
@@ -35,19 +34,36 @@
 			</header>
 			<!-- Header area end -->
 			<!-- Page content start -->
-			<div class="form-divider"></div>
-			<div class="form-divider"></div>
 			<main>
-			 <section class="container" id="loaddata">
-			 
-			 </section>
+			<section class="container" id="verticalcenter">
+					<div class="form-divider"> </div>
+
+					 
+					<div id="sucessMessage"> </div>
+                  <form action="#" id="activate" name="activate">
+ 
+					<div class="form-row-group with-icons">
+						<div class="form-row no-padding">
+						<input style="text-align:center;" type="number" name="otp" id="otp" class="form-element" placeholder="XXXXXX">
+						</div>
+					</div>
+
+					<div class="form-divider"></div>
+
+					<div class="form-row">
+						<input type="submit" name='activatebtn' id='activatebtn'  class="button circle block green" value="Activate Now">
+					</div>
+</form>
+					<div class="form-row txt-center">
+						Don't Have Code <a href="request-otp.html">Request a New Code</a>
+					</div>
+
+				</section>
 			</main>
 			<!-- Page content end -->
-			<div class="form-divider"></div>
-			<div class="form-divider"></div>
 		</div>
-	</div> 
-<div id="footer">
+	</div>
+		<div id="footer">
 			 
 		</div>
 	<!--Page loader DOM Elements. Requared all pages-->
@@ -62,16 +78,13 @@
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
 
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
-	<script src="js/scripts.js"></script>
 
-<script> 
-$(document).ready(function(){
-$("#loaddata").load(hosturl+"data.php?act=docappts&uid="+localStorage.uid); 
-}); 
-</script> 
+	<script type="text/javascript" src="js/scripts.js"></script>
 
+	
 </body>
-
+ 
 </html>

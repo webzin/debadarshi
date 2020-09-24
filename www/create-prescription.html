@@ -19,16 +19,7 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
-	 	 <script type="text/javascript">
- 
-    var url = window.location.pathname;
-    var filename = url.substring(url.lastIndexOf('/') + 1);
-    if (localStorage.ut == "D") {
-        window.location.href = "my-appointments.html";
-		}  
- 
- 
- </script> 
+  
 </head>
 
 <body>
@@ -41,7 +32,7 @@
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				<a href="index.html"><img src="icon.png" width="35" align='center'></a> 
-				<h1 class="page-title">BOOK AN APPOINTMENT</h1>
+				<h1 class="page-title">Create a prescription</h1>
 		<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
@@ -53,40 +44,24 @@
 			<main>
 			
 				<section class="container">
- <div id="sucessMessage"> </div>
+ 
 					<div class="form-divider"></div>
 					  <form action="#" data-name="Appiomentment" id="appiontment" name="appiontment">
 
 					<div class="form-row-group with-icons">
-					<div class="form-row no-padding">
-							<i class="fa fa-stethoscope"></i>
-							<select class="form-element" name="service" id="service" readonly></select>
-						</div>
-						<div class="form-row no-padding">
-							<i class="fa fa-user-md"></i>
-							<select class="form-element" name="consultant" id="consultant" readonly></select>
-						</div>
+					 
+						 
 						 
                         <div class="form-row no-padding">
 							<i class="fa fa-calendar"></i>
-							<input type='date' class="form-element" name="aptdate" id="aptdate"/>
+							<input type='datetime-local' class="form-element" name="aptdate" id="aptdate"/>
 						</div>
-						<div class="form-row no-padding">
-							<i class="fa fa-clock-o"></i>
-							<select class="form-element" name="apttime" id="apttime"> </select>
-						</div>
+						 
 						<div class="form-row no-padding">
 							<i class="fa fa-user"></i>
 							<input type="text" name="fullname" id="fullname" class="form-element" placeholder="Name">
 						</div>
-                        <div class="form-row no-padding">
-							<i class="fa fa-mobile"></i>
-							<input type="number" name="mobile" id="mobile" class="form-element" placeholder="Mobile / Phone">
-						</div>
-						<div class="form-row no-padding">
-							<i class="fa fa-envelope"></i>
-							<input type="email" name="email" id="email" class="form-element" placeholder="Email">
-						</div>
+                        
                         <div class="form-row no-padding">
 							<i class="fa fa-venus-mars"></i>
 							<select class="form-element" name="gender" id="gender"  >
@@ -97,11 +72,31 @@
 						</div>
                         <div class="form-row no-padding">
 							<i class="fa fa-sort-numeric-asc"></i>
-							<input type="number" name="age"  id="age" class="form-element" placeholder="55" required>
+							<input type="number" name="age"  id="age" class="form-element" placeholder="Age" required>
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-edit"></i>
-								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Describe Your Issues"></textarea>
+								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Complain"></textarea>
+                        
+						</div>
+						<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Past Issues"></textarea>
+                        
+						</div>
+						<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Diagnosis"></textarea>
+                        
+						</div>
+						<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Investigations"></textarea>
+                        
+						</div>
+						<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Medicines"></textarea>
                         
 						</div>
 			   
@@ -109,12 +104,14 @@
  	<div class="form-divider"></div>
 
 					<div class="form-row">
-						<input type="submit" name='apptbtn' id='apptbtn' class="button circle block green" value="Book Now"/>
+						<input type="submit" name='apptbtn' id='apptbtn' class="button circle block green" value="Generate Prescription"/>
 					</div>
  
 					</form>
 
-					<div class="form-divider"></div>
+					
+<div class="form-divider"></div>
+<div class="form-divider"></div>
 
 				</section>
 			</main>

@@ -14,6 +14,13 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
+		 <script type="text/javascript">
+    var url = window.location.pathname;
+    var filename = url.substring(url.lastIndexOf('/') + 1);
+    if (localStorage.login == "true" && filename == 'signup.html') {
+        window.location.href = "profile.html";
+    } 
+ </script>
 </head>
 
 <body>
@@ -37,40 +44,54 @@
 			<!-- Header area end -->
 			<!-- Page content start -->
 			<main>
-				<section class="container">
-				 
-					<div class="form-divider"></div>
- 
+			<div id="spinner" style=" display:none; position:fixed; top:7%; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:9999;">
+        <div style="background:#ffffff; text-align:center; vertical-align:middle; width:100%; height:100vh; ">
+             <img src="https://thumbs.gfycat.com/SparseThirstyFlyingfox-size_restricted.gif" width="40%" />    
+        </div></div>
+				<section class="container" id="verticalcenter">
+				 <div class="form-divider"> </div> 
+					 
+					<div id="sucessMessage"> </div>
+                  <form action="#" id="register" name="register">
 					<div class="form-row-group with-icons">
 						<div class="form-row no-padding">
 							<i class="fa fa-user"></i>
-							<input type="text" name="aaa" class="form-element" placeholder="Username" value="skywalker">
+							<input type="text" name="name" id="name" class="form-element" placeholder="First & Last Name" required>
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-envelope"></i>
-							<input type="email" name="aaa" class="form-element" placeholder="Email" value="luke@skywalker.com">
+							<input type="email" name="email"  id="email" class="form-element" placeholder="email@domain.com" required>
+						</div>
+				 
+						<div class="form-row no-padding">
+							<i class="fa fa-venus-mars"></i>
+							<select class="form-element" name="gender" id="gender">
+							<option value="">Gender</option>
+							<option value="M">Male</option>
+							<option value="F">Female</option>
+							</select>
+						</div>
+						<div class="form-row no-padding">
+							<i class="fa fa-sort-numeric-asc"></i>
+							<input type="number" name="age"  id="age" class="form-element" placeholder="55" required>
+						</div>
+						<div class="form-row no-padding">
+							<i class="fa fa-mobile"></i>
+							<input type="phone" name="mobile" id="mobile" class="form-element" placeholder="9090909090" required>
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-lock"></i>
-							<input type="password" name="aaa" class="form-element" placeholder="Password" value="123456">
+							<input type="password" name="pass"  id="pass" class="form-element" placeholder="Password" required>
 						</div>
-						<div class="form-row no-padding">
-							<i class="fa fa-language"></i>
-							<select class="form-element">
-								<option value="">Language</option>
-								<option value="1"  selected>English</option>
-								<option value="2">Spanish</option>
-								<option value="3">Turkish</option>
-							</select>
-						</div>
+					 
 					</div>
 
 					<div class="form-divider"></div>
 
 					<div class="form-row">
-						<a href="#" class="button circle block green">Sign Up</a>
+						<input type="submit" name='register' id='regid'  class="button circle block green" value="Sign Up">
 					</div>
-
+</form>
 					<div class="form-row txt-center">
 						Already have an account? <a href="login.html" data-loader="show">Login</a>
 					</div>
@@ -95,9 +116,11 @@
 
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
-
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
+
+		<script type="text/javascript" src="js/scripts.js"></script>
 
 	
 </body>
