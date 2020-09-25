@@ -1,5 +1,6 @@
 "use strict";
-
+//var hosturl="http://advuro.wordpress-guru.net/";
+var hosturl="http://192.168.29.243/ddauc/";
 $(document).ready(function(){
 
  
@@ -181,32 +182,9 @@ $(document).on('click', '[data-search="close"]', function(){
 });
 
 $(function(){
-	if (localStorage.login=="true")
-	{
-		$("#navbar").load("loginnav.html"); 
-	}	
-	else
-	{ 
 		$("#navbar").load("nav.html"); 
-	}
-
-}); 
-
-$(function(){
-$("#loginnav").load("loginnav.html"); 
-}); 
-$(function(){
-	if (localStorage.login=="true")
-	{
-		$("#footer").load("login-footer.html"); 
-	}	
-	else
-	{ 
 		$("#footer").load("footer.html"); 
-	}
 
-}); 
-$(function(){
-$("#footer-login").load("login-footer.html"); 
+ 
 }); 
 

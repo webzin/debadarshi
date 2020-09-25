@@ -1,6 +1,4 @@
 "use strict";
-var hosturl="http://advuro.wordpress-guru.net/";
-//var hosturl="http://127.0.0.1/ddauc/";
 $(document).ready(function(){
  
 	
