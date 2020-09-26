@@ -9,31 +9,17 @@
     </author>
     <content src="index.html" /> 
 	<splash src="splash.png" />
-
-<platform name="android">
-    <config-file parent="/*" target="AndroidManifest.xml">
-        <uses-permission android:name="android.permission.RECEIVE_SMS" />
-        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-		<uses-permission android:name="android.permission.RECEIVE_SMS" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-	<uses-permission android:name="android.permission.INTERNET"/>
-	<uses-permission android:name="android.permission.CAMERA"/>
-	<uses-permission android:name="android.permission.RECORD_AUDIO" />
-    </config-file>
-</platform>
-
-
-
-<feature name="http://api.phonegap.com/1.0/camera" />
-<feature name="http://api.phonegap.com/1.0/file" />
-<feature name="http://api.phonegap.com/1.0/network"/>
-<feature name="http://api.phonegap.com/1.0/geolocation"/>
-<feature name="InAppBrowser">
-<param name="android-package" value="org.apache.cordova.InAppBrowser" />
-
-</feature>
+ 
+<uses-permission android:name="android.permission.RECEIVE_SMS" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="android.permission.RECEIVE_SMS" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.CAMERA"/>
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+  
 <!-- all platforms -->
 <preference name="phonegap-version" value="cli-9.0.0" />
 <preference name="SplashScreenDelay" value="5000" />
