@@ -10,6 +10,30 @@
     <content src="index.html" /> 
 	<splash src="splash.png" />
 
+<platform name="android">
+    <config-file parent="/*" target="AndroidManifest.xml">
+        <uses-permission android:name="android.permission.RECEIVE_SMS" />
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+		<uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+    </config-file>
+</platform>
+
+
+
+<feature name="http://api.phonegap.com/1.0/camera" />
+<feature name="http://api.phonegap.com/1.0/file" />
+<feature name="http://api.phonegap.com/1.0/network"/>
+<feature name="http://api.phonegap.com/1.0/geolocation"/>
+<feature name="InAppBrowser">
+<param name="android-package" value="org.apache.cordova.InAppBrowser" />
+
+</feature>
 <!-- all platforms -->
 <preference name="phonegap-version" value="cli-9.0.0" />
 <preference name="SplashScreenDelay" value="5000" />
@@ -34,8 +58,8 @@
 <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2" />
 <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0" />
 <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
-<plugin name="cordova-plugin-splashscreen" source="npm" />
-
+<plugin name="phonegap-plugin-media-stream" source="npm" spec="~1.2.1" /> 
+ 
 
 <preference name="permissions"                value="none"/>
 <preference name="AndroidPersistentFileLocation" value="Compatibility" />
@@ -123,10 +147,6 @@ Otherwise, you can specify specific domains:
 <splash density="land-xxxhdpi" src="res/screen/android/splash-land-xxxhdpi.png"/>
 -->
 
-
-
-
-<allow-intent href="market:*" />
 </platform>
 <platform name="ios">
 <icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
@@ -156,32 +176,10 @@ Otherwise, you can specify specific domains:
 <splash src="res/screen/ios/Default@3x~iphone~comany.png"/>
 <splash src="res/screen/ios/Default@2x~ipad~anyany.png"/>
 <splash src="res/screen/ios/Default@2x~ipad~comany.png"/>
-<!--  Storyboard landscape  -->
-<!-- 
-<splash src="res/screen/ios/Default@2x~iphone~comcom.png"/>
-<splash src="res/screen/ios/Default@3x~iphone~anycom.png"/>
--->
-<!--  Legacy portrait  -->
-<!-- 
-<splash src="res/screen/ios/Default~iphone.png" width="320" height="480"/>
-<splash src="res/screen/ios/Default@2x~iphone.png" width="640" height="960"/>
-<splash src="res/screen/ios/Default-Portrait~ipad.png" width="768" height="1024"/>
-<splash src="res/screen/ios/Default-Portrait@2x~ipad.png" width="1536" height="2048"/>
-<splash src="res/screen/ios/Default-568h@2x~iphone.png" width="640" height="1136"/>
-<splash src="res/screen/ios/Default-667h.png" width="750" height="1334"/>
-<splash src="res/screen/ios/Default-736h.png" width="1242" height="2208"/>
--->
-<!--  Legacy landscape  -->
-<!-- 
-<splash src="res/screen/ios/Default-Landscape~ipad.png" width="1024" height="768"/>
-<splash src="res/screen/ios/Default-Landscape@2x~ipad.png" width="2048" height="1536"/>
--->
 
 
-
-
-
-<allow-intent href="itms:*" />
-<allow-intent href="itms-apps:*" />
+<allow-navigation href="*" />
+<allow-navigation href="https://meet.google.com/xho-omzp-nsw" /> 
+<allow-navigation href="https://8x8.vc/qklnqr/drddrath" />
 </platform>
 </widget>
