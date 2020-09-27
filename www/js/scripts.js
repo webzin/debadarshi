@@ -7,8 +7,16 @@ $("#signout").click(function(){
 localStorage.clear();
 window.location.href = "login.html";
 });
- 
- 
+if (localStorage.ut == "D") {
+$("#doc").show();
+$("#pat").hide();
+
+} 
+if (localStorage.ut == "P") {
+$("#doc").hide();
+$("#pat").show();
+}
+
 //Book An Appiontment
 $('#appiontment').validate({ // initialize the plugin
         rules: {
@@ -63,11 +71,13 @@ $('#appiontment').validate({ // initialize the plugin
 			beforeSend: function(){ $('#spinner').show();},
             success: function(data, status) {
 				var resp = $.parseJSON(data);
-				$('#spinner').delay(1000).fadeOut();
+				$('#spinner').delay(5000).fadeOut();
 				$('#sucessMessage').html(resp.value1);
 				$('#sucessMessage').show();
 				$('#sucessMessage').delay(5000).fadeOut();
-				/*if(resp.value2=="S"){ window.location.href = "upload-documents.html"; }*/
+				//if(resp.value2=="S"){ window.open('https://pages.razorpay.com/advuromob?amount='+resp.value6+'&name='+resp.value3+'&email='+resp.value4+'&phone='+resp.value5, '_blank', 'location=yes'); }
+				if(resp.value2=="S"){ window.open('http://192.168.29.243/ddauc/', '_blank', 'location=yes'); }
+				if(resp.value2=="S"){ $('#appiontment').hide(); $('#thankyou').show(); }
 				if(resp.value2=="E"){
 				$('#sucessMessage').delay(5000).fadeOut();
 				$("#mobile").addClass("error");
@@ -120,7 +130,7 @@ $('#register').validate({ // initialize the plugin
 			contentType: false,
 			processData: false,
 			//data: $('#additem').serialize(),
-			beforeSend: function(){ $('#spinner').show();},
+			//beforeSend: function(){ $('#spinner').show();},
             success: function(data, status) {
 				var resp = $.parseJSON(data);
 				$('#spinner').delay(1000).fadeOut();
@@ -129,6 +139,7 @@ $('#register').validate({ // initialize the plugin
 				if(resp.value2=="S"){ window.location.href = "activate.html"; }
 				if(resp.value2=="E"){
 				$('#sucessMessage').delay(5000).fadeOut();
+				$('#spinner').hide(5000);
 				$("#mobile").addClass("error");
 				$("#mobile").focus();
 				 
@@ -287,8 +298,43 @@ $('#signin').validate({ // initialize the plugin
 	}
 
 });
+// FileUpload the Process
 
- 
+
+ $('#fileuploadbtn').click(function(){
+
+   var form_data = new FormData();
+
+   // Read selected files
+   var totalfiles = document.getElementById('files').files.length;
+   for (var index = 0; index < totalfiles; index++) {
+      form_data.append("files[]", document.getElementById('files').files[index]);
+   }
+
+   // AJAX request
+   $.ajax({
+     url: hosturl+'fileupload.php', 
+     type: 'post',
+     data: form_data,
+     dataType: 'json',
+     contentType: false,
+     processData: false,
+     success: function (response) {
+
+       for(var index = 0; index < response.length; index++) {
+         var src = response[index];
+
+         // Add img element in <div id='preview'>
+         $('#preview').append('<img src="'+src+'" width="100px;" height="auto">');
+       }
+
+     }
+   });
+
+});
 
 
     });
+	
+	
+	

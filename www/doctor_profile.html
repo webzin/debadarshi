@@ -15,14 +15,11 @@
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
 
-	 <script type="text/javascript">
- 
-    var url = window.location.pathname;
+ 	 <script type="text/javascript">
+	var url = window.location.pathname;
     var filename = url.substring(url.lastIndexOf('/') + 1);
-    if (localStorage.ut == "P") {
-        window.location.href = "profile.html";
-		}  
- 
+    if (localStorage.ut == "P") { window.location.href = "profile.html"; }  
+	 else if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
  
  </script> 
  
@@ -70,7 +67,7 @@
 				 
 
 						<div class="list-box half-box">
-							<a href="my-appointments.html" class="list-item">
+							<a href="appointments.html" class="list-item">
 								<i class="fa fa-bar-chart"></i>
 								<span class="list-item-title">Appiontments</span>
 							</a>
@@ -81,47 +78,42 @@
 								<span class="list-item-title">Patients List</span>
 							</a>
 						</div>
-						<div class="list-box half-box">
-							<a href="my-health-records.html" class="list-item">
+						<div class="list-box half-box"  style="display:none;">
+							<a href="health-records.html" class="list-item">
 								<i class="fa fa-sticky-note-o"></i>
 								<span class="list-item-title">Health Records</span>
 							</a>
 						</div>
 
-						<div class="list-box half-box">
+						<div class="list-box half-box"  style="display:none;">
 							<a href="prescriptions.html" class="list-item green">
 								<i class="fa fa-pencil-square-o"></i>
 								<span class="list-item-title">Prescriptions</span>
 							</a>
 						</div>
 
-						<div class="list-box half-box">
+						<div class="list-box half-box" style="display:none;">
 							<a href="#" class="list-item">
 								<i class="fa fa-cloud-download"></i>
 								<span class="list-item-title">Documents</span>
 							</a>
 						</div>
 
-						<div class="list-box half-box">
+						<div class="list-box half-box"  style="display:none;">
 							<a href="my-consultations.html" class="list-item">
 								<i class="fa fa-file-word-o"></i>
 								<span class="list-item-title">Consultations</span>
 							</a>
 						</div>
 
-						<div class="list-box half-box">
+						<div class="list-box half-box"  style="display:none;">
 							<a href="my-communications.html" class="list-item">
 								<i class="fa fa-envelope"></i>
 								<span class="list-item-title">Messages</span>
 							</a>
 						</div>
 
-					 
-
-					 
-					
-
-						<div class="list-box half-box">
+					  <div class="list-box half-box"  style="display:none;">
 							<a href="edit-profile-doctor.html" class="list-item">
 								<i class="fa fa-cog"></i>
 								<span class="list-item-title">Settings</span>

@@ -53,7 +53,7 @@
 			<main>
 			
 				<section class="container">
- <div id="sucessMessage"> </div>
+					<div id="sucessMessage"> </div>
 					<div class="form-divider"></div>
 					  <form action="#" data-name="Appiomentment" id="appiontment" name="appiontment">
 
@@ -113,7 +113,12 @@
 					</div>
  
 					</form>
-
+					<div id="thankyou">
+					<h2 align="center">Thank you</h2>
+<p align="center">Your Appiontment has been successfully booked, an email has been sent to the doctor with your details, he will contact you soon after reviewing your case history.</p>
+					<a href="upload-documents.html" data-loader="show" class="button circle block blue" id="bap"><i class="fa fa-upload"></i> Upload Files</a>
+					</div>
+					
 					<div class="form-divider"></div>
 
 				</section>
@@ -141,6 +146,7 @@
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
 	<script src="js/scripts.js"></script>
+	<script src="cordova.js"></script>
 	<script>
 	$(function(){
     var dtToday = new Date();
@@ -169,7 +175,14 @@ picker.addEventListener('input', function(e){
 $(document).ready(function(){
 	$("#service").load(hosturl+"data.php?act=service"); 
 	$("#consultant").load(hosturl+"data.php?act=consultant"); 
-	$("#apttime").load(hosturl+"data.php?act=apttime"); 
+	$("#apttime").load(hosturl+"data.php?act=apttime");
+	 
+	$("#fullname").val(localStorage.name); 
+	$("#mobile").val(localStorage.mobile); 
+	$("#email").val(localStorage.email);
+	$("#age").val(localStorage.age);
+	$("#gender").val(localStorage.gender);
+	
 	}); 
 	 
 	

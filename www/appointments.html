@@ -13,11 +13,7 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
- <script type="text/javascript">
-var url = window.location.pathname;
-var filename = url.substring(url.lastIndexOf('/') + 1);
-if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
-</script> 
+ 
 </head>
 
 <body>
@@ -30,7 +26,7 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				 <a href="index.html"><img src="icon.png" width="35" align='center'></a>
-				<h1 class="page-title">Patients Record</h1>
+				<h1 class="page-title">Appiontment Lists</h1>
 				<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
@@ -45,6 +41,7 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 			 <section class="container" id="loaddata">
 			 
 			 </section>
+
 			</main>
 			<!-- Page content end -->
 			<div class="form-divider"></div>
@@ -62,7 +59,7 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 		  	<div class="circle3"></div>
 		</div>
 	</div>
-<div id="loader">
+	<div id="loader">
 	<div class="lds-dual-ring"></div>
 	</div>
 	<!-- JQuery library file. requared all pages -->
@@ -71,13 +68,13 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
 	<script src="js/scripts.js"></script>
-
+	<script src="cordova.js"></script>
 <script> 
 $(document).ready(function(){
-$("#loaddata").load(hosturl+"data.php?act=patlist"); 
+$("#loaddata").load(hosturl+"data.php?act=docappts"); 
 setInterval(function() { $("#loader").fadeOut("slow") }, 3000);
-}); 
-</script> 
+});
+</script>
 
 </body>
 

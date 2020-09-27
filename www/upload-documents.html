@@ -13,14 +13,23 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
- <script type="text/javascript">
-var url = window.location.pathname;
-var filename = url.substring(url.lastIndexOf('/') + 1);
-if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
-</script> 
+ <script>
+    function supportMultiple() {
+        //do I support input type=file/multiple
+        var el = document.createElement("input");
+
+        return ("multiple" in el);
+    }
+
+    function init() {
+        if(supportMultiple()) {
+            document.querySelector("#multipleFileLabel").setAttribute("style","");
+        }
+    }
+</script>
 </head>
 
-<body>
+<body onload="init()">
 	
 	<div class="wrapper">
 		 <div id="navbar">		</div>
@@ -30,7 +39,7 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				 <a href="index.html"><img src="icon.png" width="35" align='center'></a>
-				<h1 class="page-title">Patients Record</h1>
+				<h1 class="page-title">Upload Health Records</h1>
 				<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
@@ -42,8 +51,21 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 			<div class="form-divider"></div>
 			<div class="form-divider"></div>
 			<main>
-			 <section class="container" id="loaddata">
-			 
+			 <section class="container">
+			 <div class="form-row txt-center">
+				<style type="text/css">
+#preview img{
+   margin: 5px;
+}
+</style>
+<form method='post' action='#' enctype="multipart/form-data">
+   <input required type="file" id='files' name="files[]" multiple><br>
+   <input type="button" id="fileuploadbtn" value='Upload'>
+</form>
+
+<!-- Preview -->
+<div id='preview'></div>
+				</div>
 			 </section>
 			</main>
 			<!-- Page content end -->
@@ -62,22 +84,17 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 		  	<div class="circle3"></div>
 		</div>
 	</div>
-<div id="loader">
-	<div class="lds-dual-ring"></div>
-	</div>
+
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script src="js/scripts.js"></script>
+<script src="cordova.js"></script>
+ 
 
-<script> 
-$(document).ready(function(){
-$("#loaddata").load(hosturl+"data.php?act=patlist"); 
-setInterval(function() { $("#loader").fadeOut("slow") }, 3000);
-}); 
-</script> 
+
 
 </body>
 

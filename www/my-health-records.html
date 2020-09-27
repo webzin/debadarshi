@@ -14,6 +14,11 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
+<script type="text/javascript">
+var url = window.location.pathname;
+var filename = url.substring(url.lastIndexOf('/') + 1);
+if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
+</script> 
 </head>
 
 <body>
@@ -27,7 +32,7 @@
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				<a href="index.html"><img src="icon.png" width="35" align='center'></a> 
-				<h1 class="page-title">Hi [name]</h1>
+				<h1 class="page-title">Health Records</h1>
 <a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
@@ -37,36 +42,13 @@
 			<!-- Header area end -->
 			<!-- Page content start -->
 			<main>					
-
-				<section class="container">
- 
-					<div class="form-divider"></div>
-					<div class="form-label-divider"><span>My Health Records</span></div>
-					<div class="form-divider"></div>
-
-					<div class="album-half-container">
-
-						<!-- gallery item start -->
-						<div class="album-item half-box"><a href="document-details.html" data-loader="show">
-							<div class="album-image">
-								<img src="img/gallery/img4.jpg">
-							</div></a>
-							<div class="album-info">
-								<h4 class="album-title">Album 1</h4>
-									<span class="post-category"><i class="fa fa-th-large"></i> [doctype]</span>
-							<span class="post-date"><i class="fa fa-clock-o"></i> [datetime]</span>
-							<span class="post-comments"><i class="fa fa-user"></i> [name]</span>
-							 <span class="add-favorite"><a href="#"><i class="fa fa-cloud-download"></i></a></span> 
-							</div>
-						</div>
-						<!-- gallery item end -->
- 
-					</div>
-
-					<div class="form-mini-divider"></div>
+	<div class="form-divider"></div>
+			<div class="form-divider"></div>
+				<section class="container" id="loaddata">
+				
+				
 				
 				</section>				
-
 			</main>
 			<!-- Page content end -->
 				<div class="form-divider"></div>
@@ -86,13 +68,18 @@
 		</div>
 	</div>
 
-	<!-- JQuery library file. requared all pages -->
-	<script src="js/jquery-3.5.1.min.js"></script>
-
-	<!-- Template global script file. requared all pages -->
-	<script src="js/global.script.js"></script>
-
-	
+<script src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<!-- Template global script file. requared all pages -->
+<script src="js/global.script.js"></script>
+<script src="js/scripts.js"></script>
+<script src="cordova.js"></script>
+	<script> 
+$(document).ready(function(){
+$("#loaddata").load(hosturl+"data.php?act=myhelrecord&uid="+localStorage.uid); 
+}); 
+ 
+</script>
 </body>
 
  
