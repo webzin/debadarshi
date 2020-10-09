@@ -2305,13 +2305,13 @@ label.error {
 	float:left;
 
 }
-#bloodinvest, #radiotest, #urinetest {
+#bloodinvest, #radiotest, #urinetest, #comorbidities {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
  }
-#bloodinvest label, #radiotest label, #urinetest label {
+#bloodinvest label, #radiotest label, #urinetest label, #comorbidities label {
  	width:50%;
  }
  

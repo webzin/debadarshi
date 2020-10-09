@@ -93,9 +93,25 @@
 								<textarea name="diagnosis" id="diagnosis" class="form-element" rows="6" placeholder="Diagnosis"></textarea>
                         
 						</div>
-               
+                   
+						<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="medicines" id="medicines" class="form-element" rows="6" placeholder="Medicines"></textarea>
+                     
+			   	</div>
+				 
                			</div>
+                         <div class="form-row-group">
                         
+						<div class="form-row no-padding">
+                        <i class="fa fa-edit"></i> Co-Morbidities
+                        <div id="comorbidities"> 
+						
+						</div>
+                        
+				 
+						</div>
+					</div>
                         <div class="form-row-group">
                         
 						<div class="form-row no-padding">
@@ -126,13 +142,7 @@
 						</div>
 					</div>
                     		
-                        <div class="form-row-group with-icons">
-						<div class="form-row no-padding">
-							<i class="fa fa-edit"></i>
-								<textarea name="medicines" id="medicines" class="form-element" rows="6" placeholder="Medicines"></textarea>
-                     
-			   	</div>
-					</div>
+                    
                     	
                         
  	<div class="form-divider"></div>
@@ -146,11 +156,7 @@
 
 					
                     <div id="thankyou">
-					<h2 align="center">Thank you</h2>
-<p align="center">Your Appiontment has been successfully booked, an email has been sent to the doctor with your details, he will contact you soon after reviewing your case history.</p>
-
-
-		 <a href="upload-documents.html" data-loader="show" class="button circle center blue" id="bap"><i class="fa fa-upload"></i> Upload Files</a>
+					<h2 align="center">Prescription generated successfully</h2>
 					</div>
 <div class="form-divider"></div>
 <div class="form-divider"></div>
@@ -200,7 +206,8 @@ $(document).ready(function(){
 	$("#gender").val(pgend);
 	$("#uid").val(uid);
 	$("#aid").val(aid);
- 	$("#bloodinvest").load(hosturl+"data.php?act=bloodinvest"); 
+ 	$("#comorbidities").load(hosturl+"data.php?act=comorbidities"); 
+	$("#bloodinvest").load(hosturl+"data.php?act=bloodinvest"); 
 	$("#urinetest").load(hosturl+"data.php?act=urinetest"); 
 	$("#radiotest").load(hosturl+"data.php?act=radiotest"); 
  

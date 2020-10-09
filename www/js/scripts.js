@@ -407,7 +407,7 @@ $('#prescription').validate({ // initialize the plugin
 				$('#sucessMessage').delay(5000).fadeOut();
 				if(resp.value2=="S"){
 				$('#loader').hide();
-				$('#appiontment').hide();
+				$('#prescription').hide();
 				$('#thankyou').show();
 	  			}
 				 
