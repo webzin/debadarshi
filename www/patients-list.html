@@ -74,7 +74,7 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 
 <script> 
 $(document).ready(function(){
-$("#loaddata").load(hosturl+"data.php?act=patlist"); 
+$("#loaddata").load(hosturl+"patlist.php?act=patlist"); 
 setInterval(function() { $("#loader").fadeOut("slow") }, 3000);
 }); 
 </script> 

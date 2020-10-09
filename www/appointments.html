@@ -13,7 +13,12 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
+  <script type="text/javascript">
+	var url = window.location.pathname;
+    var filename = url.substring(url.lastIndexOf('/') + 1);
+	 if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
  
+ </script>
 </head>
 
 <body>
@@ -71,7 +76,7 @@
 	<script src="cordova.js"></script>
 <script> 
 $(document).ready(function(){
-$("#loaddata").load(hosturl+"data.php?act=docappts"); 
+$("#loaddata").load(hosturl+"docappts.php?act=docappts"); 
 setInterval(function() { $("#loader").fadeOut("slow") }, 3000);
 });
 </script>

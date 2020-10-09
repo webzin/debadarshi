@@ -13,23 +13,15 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
- <script>
-    function supportMultiple() {
-        //do I support input type=file/multiple
-        var el = document.createElement("input");
-
-        return ("multiple" in el);
-    }
-
-    function init() {
-        if(supportMultiple()) {
-            document.querySelector("#multipleFileLabel").setAttribute("style","");
-        }
-    }
-</script>
+ <script type="text/javascript">
+	var url = window.location.pathname;
+    var filename = url.substring(url.lastIndexOf('/') + 1);
+	 if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
+ 
+ </script>
 </head>
 
-<body onload="init()">
+<body>
 	
 	<div class="wrapper">
 		 <div id="navbar">		</div>
@@ -52,20 +44,33 @@
 			<div class="form-divider"></div>
 			<main>
 			 <section class="container">
-			 <div class="form-row txt-center">
-				<style type="text/css">
-#preview img{
-   margin: 5px;
-}
-</style>
-<form method='post' action='#' enctype="multipart/form-data">
-   <input required type="file" id='files' name="files[]" multiple><br>
-   <input type="button" id="fileuploadbtn" value='Upload'>
-</form>
+<div id="sucessMessage"> </div>
+				 
+<form action="#" data-name="AddImage" id="addimg" name="addimg"> 
+<div class="form-row-group with-icons">
+<div class="form-row no-padding">
+							<i class="fa fa-stethoscope"></i>
+							<select class="form-element" name="aid" id="aid"></select>
+						</div>
+<div class="form-row no-padding">
+<i class="fa fa-image"></i>
+<input class="form-element"  name="chalanfile" id="chalanfile" type="file" accept="image/*capture=camera"> 
+</div>
+<div class="form-row no-padding">
+<i class="fa fa-edit"></i>
+<input class="form-element"  name="comments" id="comments" type="text" value="">
+<input name="uid" id="uid" type="hidden" value="">
+</div>
+</div> 
+<div class="form-divider"></div>
 
-<!-- Preview -->
+<div class="form-row">
+<input type="submit" name='addimgbtn' id='addimgbtn' class="button circle block green" value="Upload Documents"/>
+</div>
+ 
+  
+</form>
 <div id='preview'></div>
-				</div>
 			 </section>
 			</main>
 			<!-- Page content end -->
@@ -86,14 +91,39 @@
 	</div>
 
 	<!-- JQuery library file. requared all pages -->
-	<script src="js/jquery-3.5.1.min.js"></script>
-	<!-- Template global script file. requared all pages -->
-	<script src="js/global.script.js"></script>
+<script src="js/jquery-3.5.1.min.js"></script>
+<!-- Template global script file. requared all pages -->
+<script src="js/global.script.js"></script>
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-	<script src="js/scripts.js"></script>
+<script src="js/scripts.js"></script>
 <script src="cordova.js"></script>
- 
+<script src="js/additional-methods.min.js"></script>
 
+<script>
+ 
+ 
+$(document).ready(function(){
+$("#aid").load(hosturl+"data.php?act=aptmnt&uid="+localStorage.uid+"&aptid="+localStorage.aptid); 
+ 
+$("#uid").val(localStorage.uid); 
+
+
+
+var myInput = document.getElementById('chalanfile');
+
+function sendPic() {
+    var file = myInput.files[0];
+
+    // Send file here either by adding it to a `FormData` object 
+    // and sending that via XHR, or by simply passing the file into 
+    // the `send` method of an XHR instance.
+}
+
+myInput.addEventListener('change', sendPic, false);
+}); 
+	 
+	
+    </script> 
 
 
 </body>

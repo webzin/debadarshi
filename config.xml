@@ -78,8 +78,11 @@ Define access to external domains.
 <access origin="*" /> - a wildcard access tag allows access to all external resource.
 Otherwise, you can specify specific domains:
 -->
-<access origin="http://127.0.0.1*"/> <!-- allow local pages -->
+<access origin="https://127.0.0.1*"/> 
+<access origin="https://192.168.29.243*"/> 
+<!-- allow local pages -->
 <access origin="https://advuro.wordpress-guru.net/" />
+<access origin="https://advancedurocare.in/" />
 <access origin="https://meet.google.com/xho-omzp-nsw" /> 
 <access origin="https://8x8.vc/qklnqr/drddrath" />
 <access origin="https://wordpress-guru.net/" subdomains="true" />

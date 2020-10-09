@@ -62,22 +62,36 @@ $('#appiontment').validate({ // initialize the plugin
 			var fd = new FormData(form);
 			
         $.ajax({
-			url: hosturl+"auth.php",
+			url: hosturl+"book_appiontment.php",
 			type: "POST",
 			data: fd,
 			contentType: false,
 			processData: false,
 			//data: $('#additem').serialize(),
-			beforeSend: function(){ $('#spinner').show();},
+			beforeSend: function(){ $('#loader').show();},
             success: function(data, status) {
 				var resp = $.parseJSON(data);
 				$('#spinner').delay(5000).fadeOut();
 				$('#sucessMessage').html(resp.value1);
 				$('#sucessMessage').show();
 				$('#sucessMessage').delay(5000).fadeOut();
-				//if(resp.value2=="S"){ window.open('https://pages.razorpay.com/advuromob?amount='+resp.value6+'&name='+resp.value3+'&email='+resp.value4+'&phone='+resp.value5, '_blank', 'location=yes'); }
-				if(resp.value2=="S"){ window.open('http://192.168.29.243/ddauc/', '_blank', 'location=yes'); }
-				if(resp.value2=="S"){ $('#appiontment').hide(); $('#thankyou').show(); }
+				if(resp.value2=="S"){ 
+				window.open('https://pages.razorpay.com/advuromob?amount='+resp.value6+'&name='+resp.value3+'&email='+resp.value4+'&phone='+resp.value5, '_blank', 'location=yes');
+				$('#loader').hide();
+				$('#appiontment').hide();
+				$('#thankyou').show();
+				localStorage.login="true";
+				localStorage.name=resp.value3;
+				localStorage.email=resp.value4;
+				localStorage.uid=resp.value8;
+				localStorage.gender=resp.value9;
+				localStorage.age=resp.value10;
+				localStorage.mobile=resp.value5;
+ 				localStorage.aptid=resp.value7;
+				
+				}
+				 
+				 
 				if(resp.value2=="E"){
 				$('#sucessMessage').delay(5000).fadeOut();
 				$("#mobile").addClass("error");
@@ -301,37 +315,118 @@ $('#signin').validate({ // initialize the plugin
 // FileUpload the Process
 
 
- $('#fileuploadbtn').click(function(){
+$('#addimg').validate({
 
-   var form_data = new FormData();
 
-   // Read selected files
-   var totalfiles = document.getElementById('files').files.length;
-   for (var index = 0; index < totalfiles; index++) {
-      form_data.append("files[]", document.getElementById('files').files[index]);
-   }
+		rules: {
+		comments: {
+		required: true,
+				},
+		chalanfile: {
+		required: true,
+		accept: "image/*"
+				},
+				},
 
-   // AJAX request
-   $.ajax({
-     url: hosturl+'fileupload.php', 
-     type: 'post',
-     data: form_data,
-     dataType: 'json',
-     contentType: false,
-     processData: false,
-     success: function (response) {
+		submitHandler: function(form) {
 
-       for(var index = 0; index < response.length; index++) {
-         var src = response[index];
+		var fd = new FormData(form);
+		var files = $('#chalanfile')[0].files[0];
+		fd.append('chalanfile',files);
 
-         // Add img element in <div id='preview'>
-         $('#preview').append('<img src="'+src+'" width="100px;" height="auto">');
-       }
+			$.ajax({
+			url: hosturl+"fileupload.php",
+			type: "POST",
+			data: fd,
+			contentType: false,
+			processData: false,
+			//data: $('#additem').serialize(),
+				success: function(data, status) {
+				var resp = $.parseJSON(data);
+				
+				// Add img element in <div id='preview'>
+				$('#preview').append('<img src="'+resp+'" width="100px;" height="auto">');
+				$("#addimg")[0].reset() 
+				}            
+			});
+		}
+		});
 
-     }
-   });
+
+//Book An Appiontment
+$('#prescription').validate({ // initialize the plugin
+        rules: {
+            presdate: {
+                required: true,
+            },
+			fullname: {
+                required: true,
+            },
+			gender: {
+                required: true,
+            }, 
+			apttime: {
+                required: true,
+            },
+ 			age: {
+                required: true,
+				number: true,
+            },
+			complain: {
+                required: true,
+            },
+			pastissues: {
+                required: true,
+            },
+			diagnosis: {
+                required: true,
+            }, 
+			medicines: {
+                required: true,
+            } 
+			 },
+           
+	 
+    submitHandler: function(form) {
+ 
+			var fd = new FormData(form);
+			
+        $.ajax({
+			url: hosturl+"generate_prescription.php",
+			type: "POST",
+			data: fd,
+			contentType: false,
+			processData: false,
+			//data: $('#additem').serialize(),
+			beforeSend: function(){ $('#loader').show();},
+            success: function(data, status) {
+				var resp = $.parseJSON(data);
+				$('#spinner').delay(5000).fadeOut();
+				$('#sucessMessage').html(resp.value1);
+				$('#sucessMessage').show();
+				$('#sucessMessage').delay(5000).fadeOut();
+				if(resp.value2=="S"){
+				$('#loader').hide();
+				$('#appiontment').hide();
+				$('#thankyou').show();
+	  			}
+				 
+				 
+				if(resp.value2=="E"){
+				$('#sucessMessage').delay(5000).fadeOut();
+				$("#mobile").addClass("error");
+				$("#mobile").focus();
+				 
+				}
+				}
+				             
+        });
+	}
 
 });
+
+
+
 
 
     });

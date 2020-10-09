@@ -42,7 +42,7 @@
 			<header> <!-- extra class no-background -->
 				<a href="index.html"><img src="icon.png" width="35" align='center'></a> 
 				<h1 class="page-title">BOOK AN APPOINTMENT</h1>
-		<a class="toggle-menu" href="#">
+<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
 				<i></i>
@@ -116,11 +116,13 @@
 					<div id="thankyou">
 					<h2 align="center">Thank you</h2>
 <p align="center">Your Appiontment has been successfully booked, an email has been sent to the doctor with your details, he will contact you soon after reviewing your case history.</p>
-					<a href="upload-documents.html" data-loader="show" class="button circle block blue" id="bap"><i class="fa fa-upload"></i> Upload Files</a>
+
+
+		 <a href="upload-documents.html" data-loader="show" class="button circle center blue" id="bap"><i class="fa fa-upload"></i> Upload Files</a>
 					</div>
 					
 					<div class="form-divider"></div>
-
+	<div class="form-divider"></div>
 				</section>
 			</main>
 			<!-- Page content end -->
@@ -138,12 +140,21 @@
 		  	<div class="circle3"></div>
 		</div>
 	</div>
+    	<div id="loader">
+ 
+					<h2 align="center">Terms & Conditions</h2>
+<p align="center">This payment is valid for 7 days (including the day of consultation)which includes consultation and one review of the investigations advised within that period</p>
+	<h1 align="center">Fees: INR 600.00</h1>
+					<a href="#" class="button circle center blue" id="tcagree">I Agree</a>
+					 
+	</div>
 
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<!-- Template Jquery Validate file. requared all pages -->
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-	<!-- Template global script file. requared all pages -->
+<script src="js/additional-methods.min.js"></script>
+ <!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
 	<script src="js/scripts.js"></script>
 	<script src="cordova.js"></script>
@@ -176,13 +187,12 @@ $(document).ready(function(){
 	$("#service").load(hosturl+"data.php?act=service"); 
 	$("#consultant").load(hosturl+"data.php?act=consultant"); 
 	$("#apttime").load(hosturl+"data.php?act=apttime");
-	 
 	$("#fullname").val(localStorage.name); 
 	$("#mobile").val(localStorage.mobile); 
 	$("#email").val(localStorage.email);
 	$("#age").val(localStorage.age);
 	$("#gender").val(localStorage.gender);
-	
+	$("#tcagree").click(function() { $("#loader").fadeOut("slow") });
 	}); 
 	 
 	

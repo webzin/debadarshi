@@ -67,7 +67,9 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 		  	<div class="circle3"></div>
 		</div>
 	</div>
-
+<div id="loader">
+	<div class="lds-dual-ring"></div>
+	</div>
 <script src="js/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <!-- Template global script file. requared all pages -->
@@ -77,6 +79,7 @@ if (localStorage.getItem("login") === null) {window.location.href = "login.html"
 	<script> 
 $(document).ready(function(){
 $("#loaddata").load(hosturl+"data.php?act=pathelrecord"); 
+setInterval(function() { $("#loader").fadeOut("slow") }, 3000);
 }); 
  
 </script>

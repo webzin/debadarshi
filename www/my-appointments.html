@@ -13,7 +13,12 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
+ 	 <script type="text/javascript">
+	var url = window.location.pathname;
+    var filename = url.substring(url.lastIndexOf('/') + 1);
+	 if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
  
+ </script>
 </head>
 
 <body>
@@ -26,7 +31,7 @@
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				 <a href="index.html"><img src="icon.png" width="35" align='center'></a>
-				<h1 class="page-title">Appiontment List</h1>
+				<h1 class="page-title">My Appiontments</h1>
 				<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
@@ -69,7 +74,7 @@
 	<script src="cordova.js"></script>
 <script> 
 $(document).ready(function(){
-$("#loaddata").load(hosturl+"data.php?act=myappts&uid="+localStorage.uid); 
+$("#loaddata").load(hosturl+"myappts.php?act=myappts&uid="+localStorage.uid); 
 }); 
  
 </script>

@@ -19,7 +19,12 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
-  
+   <script type="text/javascript">
+	var url = window.location.pathname;
+    var filename = url.substring(url.lastIndexOf('/') + 1);
+    if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
+ 
+ </script> 
 </head>
 
 <body>
@@ -44,9 +49,9 @@
 			<main>
 			
 				<section class="container">
- 
+ <div id="sucessMessage"> </div>
 					<div class="form-divider"></div>
-					  <form action="#" data-name="Appiomentment" id="appiontment" name="appiontment">
+					  <form action="#" data-name="Prescription" id="prescription" name="prescription">
 
 					<div class="form-row-group with-icons">
 					 
@@ -54,14 +59,13 @@
 						 
                         <div class="form-row no-padding">
 							<i class="fa fa-calendar"></i>
-							<input type='datetime-local' class="form-element" name="aptdate" id="aptdate"/>
+							<input type='date' class="form-element" name="presdate" id="presdate"/>
 						</div>
 						 
 						<div class="form-row no-padding">
 							<i class="fa fa-user"></i>
 							<input type="text" name="fullname" id="fullname" class="form-element" placeholder="Name">
-						</div>
-                        
+						</div>	
                         <div class="form-row no-padding">
 							<i class="fa fa-venus-mars"></i>
 							<select class="form-element" name="gender" id="gender"  >
@@ -76,40 +80,78 @@
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-edit"></i>
-								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Complain"></textarea>
+								<textarea name="complain" id="complain" class="form-element" rows="6" placeholder="Complain"></textarea>
                         
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-edit"></i>
-								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Past Issues"></textarea>
+								<textarea name="pastissues" id="pastissues" class="form-element" rows="6" placeholder="Past Issues"></textarea>
                         
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-edit"></i>
-								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Diagnosis"></textarea>
+								<textarea name="diagnosis" id="diagnosis" class="form-element" rows="6" placeholder="Diagnosis"></textarea>
                         
 						</div>
+               
+               			</div>
+                        
+                        <div class="form-row-group">
+                        
 						<div class="form-row no-padding">
-							<i class="fa fa-edit"></i>
-								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Investigations"></textarea>
+                        <i class="fa fa-edit"></i> Blood Investigations
+                        <div id="bloodinvest"> </div>
                         
+				 
 						</div>
-						<div class="form-row no-padding">
-							<i class="fa fa-edit"></i>
-								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Medicines"></textarea>
-                        
-						</div>
-			   
 					</div>
+                    
+                    	<div class="form-row-group">
+                        
+						<div class="form-row no-padding">
+                        <i class="fa fa-edit"></i> URINE Test <br>
+						<div id="urinetest"> </div>
+                        
+				 
+						</div>
+					</div>
+                    
+                    	<div class="form-row-group">
+                        
+						<div class="form-row no-padding">
+                        <i class="fa fa-edit"></i> Radio Investigations
+                        <div id="radiotest"> </div>
+                        
+				 
+						</div>
+					</div>
+                    		
+                        <div class="form-row-group with-icons">
+						<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="medicines" id="medicines" class="form-element" rows="6" placeholder="Medicines"></textarea>
+                     
+			   	</div>
+					</div>
+                    	
+                        
  	<div class="form-divider"></div>
-
+                    <input type="hidden" name="aid" id="aid" value="">
+                    <input type="hidden" name="uid" id="uid" value="">
 					<div class="form-row">
-						<input type="submit" name='apptbtn' id='apptbtn' class="button circle block green" value="Generate Prescription"/>
+						<input type="submit" name='prescbtn' id='prescbtn' class="button circle block green" value="Generate Prescription"/>
 					</div>
  
 					</form>
 
 					
+                    <div id="thankyou">
+					<h2 align="center">Thank you</h2>
+<p align="center">Your Appiontment has been successfully booked, an email has been sent to the doctor with your details, he will contact you soon after reviewing your case history.</p>
+
+
+		 <a href="upload-documents.html" data-loader="show" class="button circle center blue" id="bap"><i class="fa fa-upload"></i> Upload Files</a>
+					</div>
 <div class="form-divider"></div>
 <div class="form-divider"></div>
 
@@ -122,6 +164,10 @@
  <div id="footer">
 			 
 		</div>
+        
+        <div id="loader" style="display:none">
+	<div class="lds-dual-ring"></div>
+	</div>
 	<!--Page loader DOM Elements. Requared all pages-->
 	<div class="sweet-loader">
 		<div class="box">
@@ -138,35 +184,26 @@
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
 	<script src="js/scripts.js"></script>
-	<script>
-	$(function(){
-    var dtToday = new Date();
-    
-    var month = dtToday.getMonth() + 1;
-    var day = dtToday.getDate();
-    var year = dtToday.getFullYear();
-    if(month < 10)
-        month = '0' + month.toString();
-    if(day < 10)
-        day = '0' + day.toString();
-    
-    var ToDate = year + '-' + month + '-' + day;
-    $('#aptdate').attr('min', ToDate);
-});
-const picker = document.getElementById('aptdate');
-picker.addEventListener('input', function(e){
-  var day = new Date(this.value).getUTCDay();
-  if([7,0].includes(day)){
-    e.preventDefault();
-    this.value = '';
-    alert('Sunday Booking not allowed');
-  }
-});
- 
+
+<script> 
+var url_string = window.location.href ;
+var url = new URL(url_string);
+var uid = url.searchParams.get("uid");
+var aid = url.searchParams.get("aid");
+var pname = url.searchParams.get("pname");
+var page = url.searchParams.get("page");
+var pgend = url.searchParams.get("pgend");
+
 $(document).ready(function(){
-	$("#service").load(hosturl+"data.php?act=service"); 
-	$("#consultant").load(hosturl+"data.php?act=consultant"); 
-	$("#apttime").load(hosturl+"data.php?act=apttime"); 
+	$("#fullname").val(pname); 
+	$("#age").val(page);
+	$("#gender").val(pgend);
+	$("#uid").val(uid);
+	$("#aid").val(aid);
+ 	$("#bloodinvest").load(hosturl+"data.php?act=bloodinvest"); 
+	$("#urinetest").load(hosturl+"data.php?act=urinetest"); 
+	$("#radiotest").load(hosturl+"data.php?act=radiotest"); 
+ 
 	}); 
 	 
 	

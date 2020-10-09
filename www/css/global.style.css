@@ -96,7 +96,8 @@ body{
 	box-sizing: border-box;
 	-webkit-font-smoothing: antialiased;
 }
-#loaddata {margin: 5% 0; }
+#loaddata {margin: 5% 0; padding-bottom: 5%;}
+#preview img{    margin: 5px; }
 /*end of part 1----------------------------------------------------*/
 
 
@@ -501,6 +502,11 @@ select.form-element{
 	display: block;
 	width: 100%;
 }
+.button.center{
+    display: block;
+    width: 50%;
+    margin-left: 25% !important;
+}
 .button:hover, .button:active, .button:focus{
 	background-color: #f9f9f9;
 }
@@ -625,6 +631,7 @@ select.form-element{
 	margin: 0;
 	padding: 0;
 	display: inline-block;
+	text-transform: uppercase;
 }
 .expandable-header .list-item-extra{
 	position: absolute;
@@ -1385,8 +1392,8 @@ span.add-favorite {
 	height: auto;
 }
 .news-list-item .list-image{
-	width: 100px;
-	height: 100px;
+	width: 70px;
+	height: 70px;
 	position: absolute;
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
@@ -1394,9 +1401,10 @@ span.add-favorite {
 	float: left;
 }
 .news-list-item .list-content{
-	height: 100px;
+	height: 70px;
 	position: relative;
-	padding: 10px 10px 10px 110px;
+	padding: 10px;
+    margin-left: 70px;
 }
 .news-list-item .list-category{
 	font-size: 12px;
@@ -1411,7 +1419,7 @@ span.add-favorite {
 	padding: 0;
 	font-size: 14px;
 	line-height: 16px;
-	height: 32px;
+	height: auto;
 	
 }
 .news-list-item .list-author, .news-list-item .list-time{
@@ -2110,6 +2118,9 @@ White 	/	.white			#FFFFFF
 	padding: 0;
 	position: relative;
 }
+.animated-text a{
+	text-transform: uppercase;
+}
 .animated-text .text1{
 	font-size: 24px;
 	display: block;
@@ -2271,3 +2282,39 @@ label.error {
  
  
 #thankyou {display:none;} 
+
+.prescription-top {
+ 	width:100%;
+	float:left;	
+}
+.prescription {
+    background-image: url(../img/pres-bg.jpg);
+    height: auto;
+    background-size: contain;
+    background-repeat: no-repeat;
+    float: left;
+    width: 100%;
+    min-height: 400px;
+    background-position: center;
+    background-color: #fff;
+
+}
+
+.prescription-bottom{
+	width:100%;
+	float:left;
+
+}
+#bloodinvest, #radiotest, #urinetest {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+ }
+#bloodinvest label, #radiotest label, #urinetest label {
+ 	width:50%;
+ }
+ 
+ div#loaddata table {
+    color: #000000;
+}

@@ -1,13 +1,13 @@
 <script> 	  
 
 $(document).ready(function(){
-	
+	if (localStorage.login == null) {  $("#sout").hide(); 	}
 	$("#signout").click(function(){
 	localStorage.clear();
 	window.location.href = "login.html";
 	});
  
-	if (localStorage.ut == "D") { $("#doc").show(); $("#pat").hide(); 	} 	else {	$("#doc").hide();	$("#pat").show(); 	}
+	if (localStorage.ut == "D") { $("#doc").show(); $("#pat").hide(); 	} 	else if (localStorage.ut == "D") {	$("#doc").hide();	$("#pat").show(); 	}
 
  
 }); 
@@ -25,9 +25,10 @@ $(document).ready(function(){
 				<div class="nav-container">
 				<ul class="main-menu">
 				<li><a href="index.html" data-loader="show"><i class="fa fa-home"></i> Home</a></li>
+                <li><a href="about.html" data-loader="show"><i class="fa fa-user-md"></i> About us</a></li>
+                <li><a href="appointment.html" data-loader="show"><i class="fa fa-th-large"></i>Book an Appiontment</a></li>
+                <li><a href="login.html" data-loader="show"><i class="fa fa-user"></i>My Account</a></li>
 				<ul id="pat"  class="main-menu" style="display:none;">
-				<li><a href="appointment.html" data-loader="show"><i class="fa fa-th-large"></i>Book an Appiontment</a></li>
-				<li><a href="login.html" data-loader="show"><i class="fa fa-user"></i>My Account</a></li>
 				<li><a href="my-appointments.html" data-loader="show"><i class="fa fa-calendar"></i>My Appointments</a></li>
 				<li style="display:none;"><a href="my-consultations.html" data-loader="show"><i class="fa fa-bookmark"></i>My Consultations</a></li>
 				<li style="display:none;"><a href="my-health-records.html" data-loader="show"><i class="fa fa-cloud-download"></i>My Health Records</a></li>
@@ -42,7 +43,7 @@ $(document).ready(function(){
 				</ul>
 				<li><a href="treatments.html" data-loader="show"><i class="fa fa-stethoscope"></i>Treatment Services</a></li>
 				<li><a href="contact.html" data-loader="show"><i class="fa fa-map-marker"></i>Contact us</a></li>
-				<li><a href="#" data-loader="show" id="signout"><i class="fa fa-sign-out"></i>Signout</a></li>
+				<li id="sout"><a href="#" data-loader="show" id="signout"><i class="fa fa-sign-out"></i>Signout</a></li>
 
 
 				</ul>

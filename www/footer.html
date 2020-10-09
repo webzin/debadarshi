@@ -2,7 +2,11 @@
 
 $(document).ready(function(){
 	
-	$("#signoutf").click(function(){
+	$("#signoutfp").click(function(){
+	localStorage.clear();
+	window.location.href = "login.html";
+	});
+ 	$("#signoutfd").click(function(){
 	localStorage.clear();
 	window.location.href = "login.html";
 	});
@@ -12,24 +16,37 @@ $(document).ready(function(){
 	$("#patf").hide();
  
 	} 
-	else {
+	else if (localStorage.ut == "P") {
 	$("#docf").hide();
 	$("#patf").show();
 	}
-
+	else if (localStorage.ut == null) {
+	$("#allview").show();
+	$("#docf").hide();
+	$("#patf").hide();
+	} 
  
 }); 
 	
 </script>
 	<!-- TAB CONTROL START -->
 	 <div class="tab-item fixed-bottom">
-          
-<div class="tab-menu fix-width only-icons" id="patf">
+<div class="tab-menu fix-width only-icons" id="allview" style="display:none;">
 		<a class="footer-menu-item" href="index.html" style="width: 20%;"><i class="fa fa-home"></i></a>
 		<a class="footer-menu-item" href="profile.html" style="width: 20%;"><i class="fa fa-user"></i></a>
 		<a class="footer-menu-item" href="appointment.html" style="width: 20%;"><i class="fa fa-calendar"></i></a>
 		<a class="footer-menu-item" href="http://wa.me/919437134979" target="_blank" style="width: 20%;"><i class="fa fa-whatsapp"></i></a>
 		<a class="footer-menu-item" href="tel:09778123060" style="width: 20%;"><i class="fa fa-phone"></i></a>
+ 
+
+</div>
+	          
+<div class="tab-menu fix-width only-icons" id="patf">
+		<a class="footer-menu-item" href="index.html" style="width: 20%;"><i class="fa fa-home"></i></a>
+		<a class="footer-menu-item" href="profile.html" style="width: 20%;"><i class="fa fa-user"></i></a>
+		<a class="footer-menu-item" href="appointment.html" style="width: 20%;"><i class="fa fa-calendar"></i></a>
+		<a class="footer-menu-item" href="http://wa.me/919437134979" target="_blank" style="width: 20%;"><i class="fa fa-whatsapp"></i></a>
+        <a id="signoutfp" class="footer-menu-item" href="#" style="width: 20%;"><i class="fa fa-sign-out"></i></a>
 
 </div>
 		<div class="tab-menu fix-width only-icons" id="docf">
@@ -37,7 +54,7 @@ $(document).ready(function(){
 		<a class="footer-menu-item" href="doctor_profile.html" style="width: 20%;"><i class="fa fa-user"></i></a>
 		<a class="footer-menu-item" href="appointments.html" style="width: 20%;"><i class="fa fa-calendar"></i></a>
 		<a class="footer-menu-item" href="patients-list.html" style="width: 20%;"><i class="fa fa-vcard-o"></i></a>
-		<a id="signoutf" class="footer-menu-item" href="#" style="width: 20%;"><i class="fa fa-sign-out"></i></a>
+		<a id="signoutfd" class="footer-menu-item" href="#" style="width: 20%;"><i class="fa fa-sign-out"></i></a>
 
 </div>
        </div> 
