@@ -26,7 +26,7 @@
     if (localStorage.ut == "D") {
         window.location.href = "my-appointments.html";
 		}  
- 
+	 else if (localStorage.getItem("login") === null) {window.location.href = "login.html?redirect=appointment.html";}
  
  </script> 
 </head>
@@ -60,11 +60,11 @@
 					<div class="form-row-group with-icons">
 					<div class="form-row no-padding">
 							<i class="fa fa-stethoscope"></i>
-							<select class="form-element" name="service" id="service" readonly></select>
+							<select class="form-element" name="service" id="service" ></select>
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-user-md"></i>
-							<select class="form-element" name="consultant" id="consultant" readonly></select>
+							<select class="form-element" name="consultant" id="consultant" ></select>
 						</div>
 						 
                         <div class="form-row no-padding">
@@ -75,36 +75,13 @@
 							<i class="fa fa-clock-o"></i>
 							<select class="form-element" name="apttime" id="apttime"> </select>
 						</div>
-						<div class="form-row no-padding">
-							<i class="fa fa-user"></i>
-							<input type="text" name="fullname" id="fullname" class="form-element" placeholder="Name">
-						</div>
-                        <div class="form-row no-padding">
-							<i class="fa fa-mobile"></i>
-							<input type="number" name="mobile" id="mobile" class="form-element" placeholder="Mobile / Phone">
-						</div>
-						<div class="form-row no-padding">
-							<i class="fa fa-envelope"></i>
-							<input type="email" name="email" id="email" class="form-element" placeholder="Email">
-						</div>
-                        <div class="form-row no-padding">
-							<i class="fa fa-venus-mars"></i>
-							<select class="form-element" name="gender" id="gender"  >
-								<option value="">Gender</option>
-								<option value="M">Male</option>
-								<option value="F">Female</option>
-							</select>
-						</div>
-                        <div class="form-row no-padding">
-							<i class="fa fa-sort-numeric-asc"></i>
-							<input type="number" name="age"  id="age" class="form-element" placeholder="55" required>
-						</div>
+						 
 						<div class="form-row no-padding">
 							<i class="fa fa-edit"></i>
 								<textarea name="issues" id="issues" class="form-element" rows="6" placeholder="Describe Your Issues"></textarea>
                         
 						</div>
-			   
+			   <input type="hidden" name="uid"  id="uid">
 					</div>
  	<div class="form-divider"></div>
 
@@ -113,13 +90,7 @@
 					</div>
  
 					</form>
-					<div id="thankyou">
-					<h2 align="center">Thank you</h2>
-<p align="center">Your Appiontment has been successfully booked, an email has been sent to the doctor with your details, he will contact you soon after reviewing your case history.</p>
-
-
-		 <a href="upload-documents.html" data-loader="show" class="button circle center blue" id="bap"><i class="fa fa-upload"></i> Upload Files</a>
-					</div>
+					
 					
 					<div class="form-divider"></div>
 	<div class="form-divider"></div>
@@ -143,12 +114,12 @@
     	<div id="loader">
  
 					<h2 align="center">Terms & Conditions</h2>
-<p align="center">This payment is valid for 7 days (including the day of consultation)which includes consultation and one review of the investigations advised within that period</p>
+<p align="center">This payment is valid for 7 days (including the day of consultation)which includes consultation and one review of the investigations advised within that period.</p>
 	<h1 align="center">Fees: INR 600.00</h1>
 					<a href="#" class="button circle center blue" id="tcagree">I Agree</a>
 					 
 	</div>
-
+ 
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
 	<!-- Template Jquery Validate file. requared all pages -->
@@ -184,15 +155,12 @@ picker.addEventListener('input', function(e){
 });
  
 $(document).ready(function(){
+ 
 	$("#service").load(hosturl+"data.php?act=service"); 
-	$("#consultant").load(hosturl+"data.php?act=consultant"); 
-	$("#apttime").load(hosturl+"data.php?act=apttime");
-	$("#fullname").val(localStorage.name); 
-	$("#mobile").val(localStorage.mobile); 
-	$("#email").val(localStorage.email);
-	$("#age").val(localStorage.age);
-	$("#gender").val(localStorage.gender);
-	$("#tcagree").click(function() { $("#loader").fadeOut("slow") });
+	$('#service').on('change', function() {	$('#consultant').load(hosturl+'data.php?act=consultant&sid='+this.value); });
+ 	$("#apttime").load(hosturl+"data.php?act=apttime");
+	$("#uid").val(localStorage.uid); 
+ 	$("#tcagree").click(function() { $("#loader").fadeOut("slow") });
 	}); 
 	 
 	

@@ -56,7 +56,34 @@
 								<h1 class="author-name" id="name"></h1>
 								<h2 class="author-name">(<span id="gender"></span> / <span id="age"></span> Years)</h2>
 								<strong class="author-desc"><span id="mobile"></span></strong>
-								
+								<div class="author-number">
+									
+                                    <div>
+                                    <a href="today_appointments.html" data-loader="show" >
+									<i class="fa fa-calendar"></i>
+										<br><span id="curapt"></span><br>Todays Appointments
+									</a>
+                                    </div>
+                                    
+									<div>
+                                    <a href="active_appointments.html"  data-loader="show" >
+									<i class="fa fa-calendar"></i>
+                                    <br>
+									<span id="actapt"></span>
+                                    <br>
+									Active Appointments
+                                    </a>
+                                    </div>
+									<div>
+                                    <a href="appointments.html"  data-loader="show" >
+									<i class="fa fa-calendar"></i><br>
+
+										<span id="allapt"></span><br>
+
+                                        All Appointments
+                                        </a>
+									</div>
+								</div>
 							 </div>
 						</div>
 					</div>
@@ -66,55 +93,68 @@
 
 				 
 
-						<div class="list-box half-box">
-							<a href="appointments.html" class="list-item">
+						<div class="list-box">
+							<a href="today_appointments.html" class="list-item"  data-loader="show" >
 								<i class="fa fa-bar-chart"></i>
-								<span class="list-item-title">Appiontments</span>
+								<span class="list-item-title">Todays Appointments</span>
 							</a>
 						</div>
-	<div class="list-box half-box">
-							<a href="patients-list.html" class="list-item">
+                        <div class="list-box">
+							<a href="active_appointments.html" class="list-item"  data-loader="show" >
+								<i class="fa fa-bar-chart"></i>
+								<span class="list-item-title">Active Appointments</span>
+							</a>
+						</div>
+                        <div class="list-box">
+							<a href="appointments.html" class="list-item" data-loader="show" >
+								<i class="fa fa-bar-chart"></i>
+								<span class="list-item-title">Appointments Archive</span>
+							</a>
+						</div>
+                        
+	<div class="list-box">
+							<a href="patients-list.html" class="list-item" data-loader="show" >
 								<i class="fa fa-vcard-o"></i>
 								<span class="list-item-title">Patients List</span>
 							</a>
 						</div>
-						<div class="list-box half-box"  style="display:none;">
-							<a href="health-records.html" class="list-item">
+						<div class="list-box">
+							<a href="patient-records.html" class="list-item" data-loader="show" >
 								<i class="fa fa-sticky-note-o"></i>
-								<span class="list-item-title">Health Records</span>
+								<span class="list-item-title">Patients Data</span>
 							</a>
 						</div>
 
 						<div class="list-box half-box"  style="display:none;">
-							<a href="prescriptions.html" class="list-item green">
+							<a href="prescriptions.html" class="list-item green" data-loader="show" >
 								<i class="fa fa-pencil-square-o"></i>
 								<span class="list-item-title">Prescriptions</span>
 							</a>
 						</div>
 
 						<div class="list-box half-box" style="display:none;">
-							<a href="#" class="list-item">
+							<a href="#" class="list-item" data-loader="show" >
 								<i class="fa fa-cloud-download"></i>
 								<span class="list-item-title">Documents</span>
 							</a>
 						</div>
 
 						<div class="list-box half-box"  style="display:none;">
-							<a href="my-consultations.html" class="list-item">
+							<a href="my-consultations.html" class="list-item" data-loader="show" >
 								<i class="fa fa-file-word-o"></i>
 								<span class="list-item-title">Consultations</span>
 							</a>
 						</div>
 
 						<div class="list-box half-box"  style="display:none;">
-							<a href="my-communications.html" class="list-item">
+							<a href="my-communications.html" class="list-item" data-loader="show" >
 								<i class="fa fa-envelope"></i>
 								<span class="list-item-title">Messages</span>
 							</a>
 						</div>
 
 					  <div class="list-box half-box"  style="display:none;">
-							<a href="edit-profile-doctor.html" class="list-item">
+							<a href="edit-profile-doctor.html" class="list-item" data-loader="show" >
 								<i class="fa fa-cog"></i>
 								<span class="list-item-title">Settings</span>
 							</a>
@@ -153,9 +193,9 @@
 <script> 
 	$(document).ready(function(){
 	
-	$("#apt").load(hosturl+"data.php?action=apt"); 
-	$("#hr").load(hosturl+"data.php?action=hr"); 
-	$("#cns").load(hosturl+"data.php?action=cns");
+	$("#curapt").load(hosturl+"data.php?act=curapt"); 
+	$("#actapt").load(hosturl+"data.php?act=actapt"); 
+	$("#allapt").load(hosturl+"data.php?act=allapt");
 	
 	//Displaying user email on home page
  

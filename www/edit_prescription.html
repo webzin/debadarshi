@@ -9,8 +9,7 @@
 
 	<!-- Google font file. If you want you can change. -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,900" rel="stylesheet">
-	<!-- Select 2 css -->
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+
 	<!-- Fontawesome font file css -->
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
@@ -24,7 +23,6 @@
 	var url = window.location.pathname;
     var filename = url.substring(url.lastIndexOf('/') + 1);
     if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
-
  
  </script> 
 </head>
@@ -111,96 +109,67 @@
 						</div>
 										 
                			</div>
-						<div class="form-mini-divider"></div>
                          <div class="form-row-group">
                         
 						<div class="form-row no-padding">
                         <i class="fa fa-edit"></i> Co-Morbidities
-                        <div id="comorbidities1"> 
+                        <div id="comorbidities"> 
 						
 						</div>
-                               <select id="comorbidities" name="comorbidities[]" class="form-control select2 select2-hidden-accessible" multiple=""  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
+                        
 				 
 						</div>
 					</div>
-					<div class="form-mini-divider"></div>
                         <div class="form-row-group">
                         
 						<div class="form-row no-padding">
                         <i class="fa fa-edit"></i> Blood Investigations
-                        <div id="bloodinvest1"> </div>
-                         <select id="bloodinvest" name="bloodinvest[]" class="form-control select2 select2-hidden-accessible" multiple=""  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
+                        <div id="bloodinvest"> </div>
+                        
 				 
 						</div>
-
-						
-
-
 					</div>
-                    <div class="form-mini-divider"></div>
+                    
                     	<div class="form-row-group">
                         
 						<div class="form-row no-padding">
                         <i class="fa fa-edit"></i> URINE Test <br>
-						<div id="urinetest1"> </div>
-                        <select id="urinetest" name="urinetest[]" class="form-control select2 select2-hidden-accessible" multiple=""  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
+						<div id="urinetest"> </div>
+                        
 				 
 						</div>
-
 					</div>
-                    <div class="form-mini-divider"></div>
+                    
                     	<div class="form-row-group">
                         
 						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> Radiological Investigations
-                        <div id="radiotest1"> </div>
-                         <select id="radiotest" name="radiotest[]" class="form-control select2 select2-hidden-accessible" multiple=""  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
+                        <i class="fa fa-edit"></i> Radio Investigations
+                        <div id="radiotest"> </div>
+                        
 				 
 						</div>
 					</div>
-                    	<div class="form-mini-divider"></div>	
+                    		
                     <div class="form-row-group">
                         
 						<div class="form-row no-padding">
                         <i class="fa fa-edit"></i> Semen Investigations
-                        <div id="sementest1"> </div>
-                        <select id="sementest" name="sementest[]" class="form-control select2 select2-hidden-accessible" multiple=""  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
+                        <div id="semen"> </div>
+                        
 				 
 						</div>
 					</div>
-					 	<div class="form-mini-divider"></div>	
-                    <div class="form-row-group">
-                        
-						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> Other Investigations
-                        <div id="other"> </div>
-                        
-				 <select id="othertest" name="othertest[]" class="form-control select2 select2-hidden-accessible" multiple=""  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
-						</div>
-					</div>
-<div class="form-mini-divider"></div>
+
 					<div class="form-row-group">
                         
 						<div class="form-row no-padding">
                         <i class="fa fa-edit"></i>
-						<textarea name="docnotes" id="docnotes" class="form-element" rows="6" placeholder="Doctor Notes"></textarea>
+						<textarea name="other" id="other" class="form-element" rows="6" placeholder="Other Investigations"></textarea>
 						
                         
 				 
 						</div>
-					</div>	   
-					<div class="form-mini-divider"></div>
-					<div class="form-row-group">
-                        
-						<div class="form-row no-padding">
-               
-						 <input type="checkbox" id="sbath" name="sbath" value="Y">
-<label for="sbath"> Sitz Bath</label><br>
-						
-                        
-				 
-						</div>
-					</div>	   
+					</div>	                    	
                         
  	<div class="form-divider"></div>
                     <input type="hidden" name="aid" id="aid" value="">
@@ -214,7 +183,6 @@
 					
                     <div id="thankyou">
 					<h2 align="center">Prescription generated successfully</h2>
-
 					</div>
 <div class="form-divider"></div>
 <div class="form-divider"></div>
@@ -248,12 +216,8 @@
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
 	<script src="js/scripts.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 <script> 
-
-
-
 var url_string = window.location.href ;
 var url = new URL(url_string);
 var uid = url.searchParams.get("uid");
@@ -263,19 +227,6 @@ var page = url.searchParams.get("page");
 var pgend = url.searchParams.get("pgend");
 
 $(document).ready(function(){
-	var now = new Date();
-	var month = (now.getMonth() + 1);               
-	var day = now.getDate();
-	if (month < 10) 
-	month = "0" + month;
-	if (day < 10) 
-	day = "0" + day;
-	var today = now.getFullYear() + '-' + month + '-' + day;
-	$('#presdate').val(today);
-
-
-	$('.select2').select2({ closeOnSelect: false });
-
 	$("#fullname").val(pname); 
 	$("#age").val(page);
 	$("#gender").val(pgend);
@@ -285,8 +236,7 @@ $(document).ready(function(){
 	$("#bloodinvest").load(hosturl+"data.php?act=bloodinvest"); 
 	$("#urinetest").load(hosturl+"data.php?act=urinetest"); 
 	$("#radiotest").load(hosturl+"data.php?act=radiotest"); 
- 	$("#sementest").load(hosturl+"data.php?act=sementest");
-	$("#othertest").load(hosturl+"data.php?act=othertest");
+ 	$("#semen").load(hosturl+"data.php?act=semen"); 
 
 	}); 
 	 

@@ -18,7 +18,7 @@
 	var url = window.location.pathname;
     var filename = url.substring(url.lastIndexOf('/') + 1);
     if (localStorage.ut == "D") { window.location.href = "doctor_profile.html"; }  
-	 else if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
+	 else if (localStorage.getItem("login") === null) {window.location.href = "login.html?redirect=profile.html";}
  
  </script> 
  
@@ -61,7 +61,7 @@
                                     <div>
                                     <a href="my-appointments.html">
 									<i class="fa fa-calendar"></i>
-										<br><span id="apt"></span><br>Appiontments
+										<br><span id="apt"></span><br>Appointments
 									</a>
                                     </div>
                                     
@@ -72,8 +72,9 @@
 									<span id="hr"></span>
                                     <br>
 									Health Records
-									</div>
+									
                                     </a>
+                                    </div>
 									<div>
                                     <a href="my-consultations.html" class="list-item">
 									<i class="fa fa-calendar"></i><br>
@@ -136,11 +137,11 @@
 								<span class="list-item-title">MY COMMUNICATIONS</span>
 							</a>
 						</div>
-						<div class="list-box" style="display:none">
+						<div class="list-box">
 							<a href="edit-profile.html" class="list-item">
 								<i class="fa fa-user"></i>
 								<em class="seperate"></em>
-								<span class="list-item-title">MY PROFILE</span>
+								<span class="list-item-title">EDIT PROFILE</span>
 							</a>
 						</div>
 

@@ -1392,19 +1392,22 @@ span.add-favorite {
 	height: auto;
 }
 .news-list-item .list-image{
-	width: 70px;
-	height: 70px;
-	position: absolute;
-	border-top-left-radius: 3px;
-	border-bottom-left-radius: 3px;
-	overflow: hidden;
-	float: left;
+ 
+	height: auto;
+ 	padding:2%;
+ 	float: left;
 }
 .news-list-item .list-content{
 	height: 70px;
 	position: relative;
 	padding: 10px;
     margin-left: 70px;
+}
+.news-list-item .list-content1{
+	height: auto;
+	position: relative;
+	padding: 10px;
+     
 }
 .news-list-item .list-category{
 	font-size: 12px;
@@ -2221,7 +2224,8 @@ label.error {
 	text-align:center;
 	color:#FFFFFF;
 }
-
+.redtext{color:red !important; font-weight:bold;}
+.greentex{color:green !important; font-weight:bold;}
 .pat-img{
 	width: 32px;
 	height: 32px;

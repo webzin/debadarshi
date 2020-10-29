@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Dr Debadarshi's Advanced Urocare</title>	
+<title>Dr Debadarshi's Advanced Urocare</title>
 
 	<!-- Google font file. If you want you can change. -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900" rel="stylesheet">
@@ -13,27 +13,20 @@
 
 	<!-- Template global css file. Requared all pages -->
 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
- 	<link rel="stylesheet" type="text/css" href="css/global.style.css">
-   <script type="text/javascript">
-	var url = window.location.pathname;
-    var filename = url.substring(url.lastIndexOf('/') + 1);
-    if (localStorage.getItem("login") === null) {window.location.href = "login.html";}
- 
- </script> 
 </head>
 
 <body>
 	
 	<div class="wrapper">
-		 <div id="navbar">		</div>
-			  
-		 
+		<div id="navbar">
+			 
+		</div>
 		<div class="wrapper-inline">
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				 <a href="index.html"><img src="icon.png" width="35" align='center'></a>
-				<h1 class="page-title">Prescription</h1>
-				<a class="toggle-menu" href="#">
+				<h1 class="page-title">MAKE YOUR PAYMENT</h1>
+		<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
 				<i></i>
@@ -42,22 +35,33 @@
 			<!-- Header area end -->
 			<!-- Page content start -->
 			<main>
-			 <section class="container">
-              <div class="prescription-top"><img src="img/pres-bg-top.jpg" width="100%" align='center'></div>
-			  <div class="prescription">
-	 
-             
-             <div id="loaddata"></div>
-             </div>
-            
-			 </section>
+            <section>
+			<div class="form-divider"></div><div class="form-divider"></div><div class="form-divider"></div>
+          <form id="payment" action="thank-you.html" method="POST">
+<script>
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_177ffN0fTkMBxT" 
+    data-amount="29935"
+    data-currency="INR"
+    data-order_id="order_CgmcjRh9ti2lP7"
+    data-buttontext="Pay with Razorpay"
+    data-name="Acme Corp"
+    data-description="A Wild Sheep Chase is the third novel by Japanese author Haruki Murakami"
+    data-image="https://example.com/your_logo.jpg"
+    data-prefill.name="Gaurav Kumar"
+    data-prefill.email="gaurav.kumar@example.com"
+    data-theme.color="#F37254"
+>
+
+</script>
+<input type="hidden" custom="Hidden Element" name="hidden" />
+</form>
+</section>
 			</main>
 			<!-- Page content end -->
-			<div class="form-divider"></div>
-			<div class="form-divider"></div>
 		</div>
-	</div> 
-<div id="footer">
+	</div>
+		<div id="footer">
 			 
 		</div>
 	<!--Page loader DOM Elements. Requared all pages-->
@@ -71,22 +75,21 @@
 
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
-	<script src="js/scripts.js"></script>
-	<script src="cordova.js"></script>
-<script> 
-var url_string = window.location.href ;
-var url = new URL(url_string);
-var uid = url.searchParams.get("uid");
-var aid = url.searchParams.get("aid");
 
+	<script type="text/javascript" src="js/scripts.js"></script>
+<script>  
 $(document).ready(function(){
-$("#loaddata").load(hosturl+"prescription.php?act=prescriptions&uid="+uid+"&aid="+aid); 
-}); 
-</script> 
-
+ 	$("#payment").submit();
+	
+	$.get(hosturl+"pay/order.php", function( orderid ) {	alert (orderid);  });
+ 
+ });
+</script>
+	
 </body>
-
+ 
 </html>
