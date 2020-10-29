@@ -169,9 +169,9 @@ $('#register').validate({ // initialize the plugin
 				localStorage.mobile=resp.value11;
 				localStorage.gender=resp.value12;
 				localStorage.age=resp.value13;
-				localStorage.marital=resp.value16;
-				localStorage.height=resp.value17;
-				localStorage.weight=resp.value18;
+				localStorage.mstatus=resp.value18;
+				localStorage.height=resp.value16;
+				localStorage.weight=resp.value17;
 				localStorage.profile_pic=resp.value14;
 				
 				}
