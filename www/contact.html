@@ -54,7 +54,9 @@
 		  	<div class="circle3"></div>
 		</div>
 	</div>
-
+<div id="loader">
+	<div class="lds-dual-ring"></div>
+	</div>
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
 
@@ -67,6 +69,7 @@
  
 $(document).ready(function(){
 	$("#loaddata").load(hosturl+"data.php?act=contact"); 
+	setInterval(function() { $("#loader").fadeOut("slow") }, 5000);
 	}); 
 	 
 	

@@ -182,7 +182,9 @@
 		  	<div class="circle3"></div>
 		</div>
 	</div> 
-
+<div id="loader">
+	<div class="lds-dual-ring"></div>
+	</div>
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
  
@@ -192,7 +194,7 @@
 
 <script> 
 	$(document).ready(function(){
-	
+	setInterval(function() { $("#loader").fadeOut("slow") }, 3000);
 	$("#curapt").load(hosturl+"data.php?act=curapt"); 
 	$("#actapt").load(hosturl+"data.php?act=actapt"); 
 	$("#allapt").load(hosturl+"data.php?act=allapt");

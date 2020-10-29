@@ -172,7 +172,9 @@
 		  	<div class="circle3"></div>
 		</div>
 	</div> 
-
+<div id="loader">
+	<div class="lds-dual-ring"></div>
+	</div>
 	<!-- JQuery library file. requared all pages -->
 	<script src="js/jquery-3.5.1.min.js"></script>
  
@@ -182,7 +184,7 @@
 
 <script> 
 	$(document).ready(function(){
-	
+	setInterval(function() { $("#loader").fadeOut("slow") }, 5000);
 	$("#apt").load(hosturl+"data.php?act=apt&uid="+localStorage.uid); 
 	$("#hr").load(hosturl+"data.php?act=hr&uid="+localStorage.uid); 
 	$("#cons").load(hosturl+"data.php?act=cns&uid="+localStorage.uid);
