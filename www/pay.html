@@ -46,7 +46,8 @@
 			<main>
             <section>
 			<div class="form-divider"></div><div class="form-divider"></div><div class="form-divider"></div>
-          <a href="pay.html" data-loader="show" class="button circle green center" id="rzp-button1"><i class="fa fa-inr"></i>Make Payment</a>
+         <a href="#" id="rzp-button1" style="display: block;text-align: center;">
+<img src="https://advancedurocare.in/paynow.png"></a>
           <div id="loaddata"></div>
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
@@ -78,7 +79,7 @@ var options = {
     "notes": {
 		"Name": localStorage.name, // pass customer name
 		"Email": localStorage.email,// customer email
-		"Phone": localStorage.mobile //customer phone no.
+		"Phone": localStorage.mobile, //customer phone no.
         "Address": localStorage.addr //customer address 
     },
     "theme": {
