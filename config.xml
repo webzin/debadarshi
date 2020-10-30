@@ -54,7 +54,7 @@
 <preference name="auto-hide-splash-screen"    value="true" />           <!-- ios: if set to false, the splash screen must be hidden using a JavaScript API -->
 <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
 <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
- 
+
 
 <access origin="*" />
 <allow-intent href="http://*/*" />
@@ -164,5 +164,19 @@ Otherwise, you can specify specific domains:
 <allow-navigation href="*" />
 <allow-navigation href="https://meet.google.com/xho-omzp-nsw" /> 
 <allow-navigation href="https://8x8.vc/qklnqr/drddrath" />
+</platform>
+
+<platform name="android">
+<!-- ... -->
+<config-file parent="application" target="AndroidManifest.xml">
+	<activity android:label="webIntentFilter" android:name="com.advurodpm.app">
+		<intent-filter android:autoVerify="true">
+			<action android:name="android.intent.action.VIEW" />
+			<category android:name="android.intent.category.DEFAULT" />
+			<category android:name="android.intent.category.BROWSABLE" />
+			<data android:host="advancedurocare.in" android:scheme="https" />
+		</intent-filter>
+	</activity>
+</config-file>
 </platform>
 </widget>
