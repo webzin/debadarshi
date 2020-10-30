@@ -166,17 +166,5 @@ Otherwise, you can specify specific domains:
 <allow-navigation href="https://8x8.vc/qklnqr/drddrath" />
 </platform>
 
-<platform name="android">
-<!-- ... -->
-<config-file parent="application" target="AndroidManifest.xml">
-	<activity android:label="webIntentFilter" android:name="com.advurodpm.app">
-		<intent-filter android:autoVerify="true">
-			<action android:name="android.intent.action.VIEW" />
-			<category android:name="android.intent.category.DEFAULT" />
-			<category android:name="android.intent.category.BROWSABLE" />
-			<data android:host="advancedurocare.in" android:scheme="https" />
-		</intent-filter>
-	</activity>
-</config-file>
-</platform>
+ 
 </widget>
