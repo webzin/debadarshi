@@ -184,7 +184,7 @@
 
 <script> 
 	$(document).ready(function(){
-	setInterval(function() { $("#loader").fadeOut("slow") }, 5000);
+	setInterval(function() { $("#loader").fadeOut("slow") }, 1000);
 	$("#apt").load(hosturl+"data.php?act=apt&uid="+localStorage.uid); 
 	$("#hr").load(hosturl+"data.php?act=hr&uid="+localStorage.uid); 
 	$("#cons").load(hosturl+"data.php?act=cns&uid="+localStorage.uid);
