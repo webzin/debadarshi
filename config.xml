@@ -81,6 +81,8 @@ Otherwise, you can specify specific domains:
 <access origin="https://127.0.0.1*"/> 
 <access origin="https://192.168.29.243*"/> 
 <!-- allow local pages -->
+<access origin="https://*.razorpay.com/" />
+<access origin="https://api.razorpay.com/" />
 <access origin="https://advuro.wordpress-guru.net/" />
 <access origin="https://advancedurocare.in/" />
 <access origin="https://meet.google.com/xho-omzp-nsw" /> 

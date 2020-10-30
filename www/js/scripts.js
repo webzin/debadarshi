@@ -68,6 +68,7 @@ $('#appiontment').validate({ // initialize the plugin
 			 	if(resp.value2=="E"){
 				$('#loader').hide();
 				$("#apptbtn").prop('disabled', false);
+				$("#apptbtn").val('BOOK NOW');
 				$('#sucessMessage').delay(5000).fadeOut();
 				$("#aptdate").addClass("error");
 				$("#aptdate").focus();
