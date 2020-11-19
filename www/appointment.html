@@ -73,7 +73,7 @@
 						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-clock-o"></i>
-							<select class="form-element" name="apttime" id="apttime"> </select>
+							<div class="form-element" id="apttime"> </div>
 						</div>
 						 
 						<div class="form-row no-padding">
@@ -128,37 +128,26 @@
  <!-- Template global script file. requared all pages -->
 	<script src="js/global.script.js"></script>
 	<script src="js/scripts.js"></script>
-	<script src="cordova.js"></script>
-	<script>
-	$(function(){
-    var dtToday = new Date();
-    
-    var month = dtToday.getMonth() + 1;
-    var day = dtToday.getDate();
-    var year = dtToday.getFullYear();
-    if(month < 10)
-        month = '0' + month.toString();
-    if(day < 10)
-        day = '0' + day.toString();
-    
-    var ToDate = year + '-' + month + '-' + day;
-    $('#aptdate').attr('min', ToDate);
-});
-const picker = document.getElementById('aptdate');
-picker.addEventListener('input', function(e){
-  var day = new Date(this.value).getUTCDay();
-  if([7,0].includes(day)){
-    e.preventDefault();
-    this.value = '';
-    alert('Sunday Booking not allowed');
-  }
-});
  
+	<script>
+	 
+document.getElementById("aptdate").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
+
 $(document).ready(function(){
  
+ 
+ $('#aptdate').change(function() {
+    var date = $(this).val();
+ 	$("#apttime").load(hosturl+"data.php?act=apttimee&date="+date);	
+});
+ 
+ 
+ 
+ 
+ 
 	$("#service").load(hosturl+"data.php?act=service"); 
-	$('#service').on('change', function() {	$('#consultant').load(hosturl+'data.php?act=consultant&sid='+this.value); });
- 	$("#apttime").load(hosturl+"data.php?act=apttime");
+	$('#consultant').load(hosturl+'data.php?act=consultant');
+
 	$("#uid").val(localStorage.uid); 
  	$("#tcagree").click(function() { $("#loader").fadeOut("slow") });
 	}); 

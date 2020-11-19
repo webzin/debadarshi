@@ -358,6 +358,36 @@ $('#addimg').validate({
 		});
 
 
+
+$('#updateimg').validate({
+
+ 
+		submitHandler: function(form) {
+
+		var fd = new FormData(form);
+		var files = $('#file-input')[0].files[0];
+		fd.append('chalanfile',files);
+
+			$.ajax({
+			url: hosturl+"profile_update.php",
+			type: "POST",
+			data: fd,
+			contentType: false,
+			processData: false,
+			beforeSend: function(){ 
+			$('#spinner').show();
+			},
+			//data: $('#additem').serialize(),
+				success: function(data, status) {
+			var resp = $.parseJSON(data);
+			localStorage.profile_pic=resp.value2;
+			$('#spinner').hide();
+				}            
+			});
+		}
+ });
+
+
 //Book An Appiontment
 $('#prescription').validate({ // initialize the plugin
         rules: {

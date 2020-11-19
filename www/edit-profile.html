@@ -52,10 +52,15 @@
 				 	<div class="form-divider"></div>
 
 					<div class="form-row txt-center">
+					<form id="updateimg" method="post" name="updateimg">
 						<div class="profile-image">
                         <img class="avatar-img" alt="User Avatar" id="profilepic" width="100" height="100">
- 						<a href="javascript:void(0);" class="update-btn"><i class="fa fa-camera"></i></a>
+ 						<a href="javascript:void(0);" class="update-btn" id="profile_img"><i class="fa fa-camera"></i></a>
+						<input id="file-input" type="file" name="chalanfile" style="display: none;" accept="image/*" />
+						<input type="hidden" name="usrid" id="usrid">
+						<input style="display: none;" type="submit" name='updimgbtn' id='updimgbtn'  value="Upload Documents"/>
 						</div>
+						</form>
 					</div>
 
 					<div class="form-divider"></div>
@@ -204,9 +209,22 @@
 	<script src="js/global.script.js"></script>
 
 		<script type="text/javascript" src="js/scripts.js"></script>
+
 		<script>
 		$(document).ready(function(){
+
+$('#profile_img').on('click', function() {
+    $('#file-input').trigger('click');
+});
+$('#file-input').change( function(e) {
+	
+	var img = URL.createObjectURL(e.target.files[0]);
+	$('#profilepic').attr('src', img);
+	  $('#updimgbtn').trigger('click');
+});
+
 		$("#uid").val(localStorage.uid); 
+		$("#usrid").val(localStorage.uid); 
 		$("#name").val(localStorage.name); 
 		$("#mobile").val(localStorage.mobile); 
 		$("#email").val(localStorage.email);

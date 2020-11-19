@@ -85,11 +85,26 @@
 								<textarea name="complain" id="complain" class="form-element" rows="6" placeholder="Complain"></textarea>
                         
 						</div>
+                        	<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="presurghist" id="presurghist" class="form-element" rows="6" placeholder="Previous surgical history"></textarea>
+                        
+						</div>
+                        	<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="preinvest" id="preinvest" class="form-element" rows="6" placeholder="Previous investigations"></textarea>
+                        
+						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-edit"></i>
 								<textarea name="pastissues" id="pastissues" class="form-element" rows="6" placeholder="Past Issues"></textarea>
                         
 						</div>
+						<div class="form-row no-padding">
+						<i class="fa fa-edit"></i>
+						<textarea name="comorbidities" id="comorbidities" class="form-element" rows="6" placeholder="Co-Morbidities"></textarea>
+						</div>
+
 						<div class="form-row no-padding">
 						<i class="fa fa-edit"></i>
 						<textarea name="diagnosis" id="diagnosis" class="form-element" rows="6" placeholder="Diagnosis"></textarea>
@@ -109,20 +124,12 @@
 						<i class="fa fa-edit"></i>
 						<textarea name="others" id="others" class="form-element" rows="6" placeholder="Other Notes"></textarea>
 						</div>
+					
 										 
                			</div>
-						<div class="form-mini-divider"></div>
-                         <div class="form-row-group">
-                        
-						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> Co-Morbidities
-                        <div id="comorbidities1"> 
-						
-						</div>
-                               <select id="comorbidities" name="comorbidities[]" class="form-control select2 select2-hidden-accessible" multiple=""  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
-				 
-						</div>
-					</div>
+					 
+					
+                     
 					<div class="form-mini-divider"></div>
                         <div class="form-row-group">
                         
@@ -172,7 +179,7 @@
                     <div class="form-row-group">
                         
 						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> Other Investigations
+                        <i class="fa fa-edit"></i> Special Investigations
                         <div id="other"> </div>
                         
 				 <select id="othertest" name="othertest[]" class="form-control select2 select2-hidden-accessible" multiple=""  style="width: 100%;" tabindex="-1" aria-hidden="true"></select>
@@ -281,8 +288,7 @@ $(document).ready(function(){
 	$("#gender").val(pgend);
 	$("#uid").val(uid);
 	$("#aid").val(aid);
- 	$("#comorbidities").load(hosturl+"data.php?act=comorbidities"); 
-	$("#bloodinvest").load(hosturl+"data.php?act=bloodinvest"); 
+ 	$("#bloodinvest").load(hosturl+"data.php?act=bloodinvest"); 
 	$("#urinetest").load(hosturl+"data.php?act=urinetest"); 
 	$("#radiotest").load(hosturl+"data.php?act=radiotest"); 
  	$("#sementest").load(hosturl+"data.php?act=sementest");

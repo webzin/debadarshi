@@ -37,7 +37,7 @@
 			<!-- Header area start -->
 			<header> <!-- extra class no-background -->
 				<a href="index.html"><img src="icon.png" width="35" align='center'></a> 
-				<h1 class="page-title">Create a prescription</h1>
+				<h1 class="page-title">Edit Prescription</h1>
 		<a class="toggle-menu" href="#">
 				<i></i>
 				<i></i>
@@ -83,10 +83,24 @@
 								<textarea name="complain" id="complain" class="form-element" rows="6" placeholder="Complain"></textarea>
                         
 						</div>
+							<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="presurghist" id="presurghist" class="form-element" rows="6" placeholder="Previous surgical history"></textarea>
+                        
+						</div>
+							<div class="form-row no-padding">
+							<i class="fa fa-edit"></i>
+								<textarea name="preinvest" id="preinvest" class="form-element" rows="6" placeholder="Previous investigations"></textarea>
+                        
+						</div>
 						<div class="form-row no-padding">
 							<i class="fa fa-edit"></i>
 								<textarea name="pastissues" id="pastissues" class="form-element" rows="6" placeholder="Past Issues"></textarea>
                         
+						</div>
+							<div class="form-row no-padding">
+						<i class="fa fa-edit"></i>
+						<textarea name="comorbidities" id="comorbidities" class="form-element" rows="6" placeholder="Co-Morbidities"></textarea>
 						</div>
 						<div class="form-row no-padding">
 						<i class="fa fa-edit"></i>
@@ -107,60 +121,39 @@
 						<i class="fa fa-edit"></i>
 						<textarea name="others" id="others" class="form-element" rows="6" placeholder="Other Notes"></textarea>
 						</div>
-										 
-               			</div>
-                         <div class="form-row-group">
+				 
                         
 						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> Co-Morbidities
-                        <div id="comorbidities"> 
-						
+                        <i class="fa fa-edit"></i> 
+						 <textarea name="bloodinvest" id="bloodinvest" class="form-element" rows="6" placeholder="Blood Investigations"></textarea>
+                       
+				 
+                        </div>
+						<div class="form-row no-padding">
+                        <i class="fa fa-edit"></i> 
+						<textarea name="urinetest" id="urinetest" class="form-element" rows="6" placeholder="URINE Test"></textarea>
+						 
+				 
 						</div>
+			 
+                        
+						<div class="form-row no-padding">
+                        <i class="fa fa-edit"></i> 
+						<textarea name="radiotest" id="radiotest" class="form-element" rows="6" placeholder="Radio Investigations"></textarea>
+                     
                         
 				 
 						</div>
-					</div>
-                        <div class="form-row-group">
+			 
                         
 						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> Blood Investigations
-                        <div id="bloodinvest"> </div>
+                        <i class="fa fa-edit"></i> 
+						<textarea name="semen" id="semen" class="form-element" rows="6" placeholder="Semen Investigations"></textarea>
+                  
                         
 				 
 						</div>
-					</div>
-                    
-                    	<div class="form-row-group">
-                        
-						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> URINE Test <br>
-						<div id="urinetest"> </div>
-                        
 				 
-						</div>
-					</div>
-                    
-                    	<div class="form-row-group">
-                        
-						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> Radio Investigations
-                        <div id="radiotest"> </div>
-                        
-				 
-						</div>
-					</div>
-                    		
-                    <div class="form-row-group">
-                        
-						<div class="form-row no-padding">
-                        <i class="fa fa-edit"></i> Semen Investigations
-                        <div id="semen"> </div>
-                        
-				 
-						</div>
-					</div>
-
-					<div class="form-row-group">
                         
 						<div class="form-row no-padding">
                         <i class="fa fa-edit"></i>
@@ -169,20 +162,35 @@
                         
 				 
 						</div>
+						<div class="form-row no-padding">
+                        <i class="fa fa-edit"></i>
+						<textarea name="docnotes" id="docnotes" class="form-element" rows="6" placeholder="Doctor Notes"></textarea>
+						
+                        
+				 
+						</div>
+						<div class="form-row no-padding">
+               
+						 <input type="checkbox" id="sbath" name="sbath" value="Y">
+<label for="sbath"> Sitz Bath</label><br>
+						
+                        
+				 
+						</div>
 					</div>	                    	
                         
  	<div class="form-divider"></div>
-                    <input type="hidden" name="aid" id="aid" value="">
-                    <input type="hidden" name="uid" id="uid" value="">
+                    <input type="hidden" name="presid" id="presid" value="">
+              
 					<div class="form-row">
-						<input type="submit" name='prescbtn' id='prescbtn' class="button circle block green" value="Generate Prescription"/>
+						<input type="submit" name='updprescbtn' id='updprescbtn' class="button circle block green" value="Update Prescription"/>
 					</div>
  
 					</form>
 
 					
                     <div id="thankyou">
-					<h2 align="center">Prescription generated successfully</h2>
+					<h2 align="center">Prescription Updated Successfully</h2>
 					</div>
 <div class="form-divider"></div>
 <div class="form-divider"></div>
@@ -218,27 +226,57 @@
 	<script src="js/scripts.js"></script>
 
 <script> 
-var url_string = window.location.href ;
-var url = new URL(url_string);
-var uid = url.searchParams.get("uid");
-var aid = url.searchParams.get("aid");
-var pname = url.searchParams.get("pname");
-var page = url.searchParams.get("page");
-var pgend = url.searchParams.get("pgend");
+
+
+
+ 
 
 $(document).ready(function(){
-	$("#fullname").val(pname); 
-	$("#age").val(page);
-	$("#gender").val(pgend);
-	$("#uid").val(uid);
-	$("#aid").val(aid);
- 	$("#comorbidities").load(hosturl+"data.php?act=comorbidities"); 
-	$("#bloodinvest").load(hosturl+"data.php?act=bloodinvest"); 
-	$("#urinetest").load(hosturl+"data.php?act=urinetest"); 
-	$("#radiotest").load(hosturl+"data.php?act=radiotest"); 
- 	$("#semen").load(hosturl+"data.php?act=semen"); 
 
-	}); 
+
+ 
+
+var url_string = window.location.href ;
+var url = new URL(url_string);
+var presid = url.searchParams.get("aid");
+
+$("#presid").val(presid);
+$.get(hosturl+"edit-data.php?act=editpres&prsid="+presid, function(data){ 
+var resp = $.parseJSON(data);	
+$('#presdate').val(resp.value19); 	
+$('#fullname').val(resp.value1);
+$('#gender').val(resp.value3);
+$('#age').val(resp.value2);
+
+$('#complain').val(resp.value2);
+$('#pastissues').val(resp.value2);
+$('#diagnosis').val(resp.value2);
+$('#complain').val(resp.value2);
+$('#pastissues').val(resp.value2);
+$('#complain').val(resp.value2);
+$('#pastissues').val(resp.value2);
+$('#diagnosis').val(resp.value2);
+$('#diagnosis').val(resp.value2);
+$('#mgmtplan').val(resp.value2);
+$('#medicines').val(resp.value2);
+$('#others').val(resp.value2);
+$('#comorbidities').val(resp.value2);
+$('#bloodinvest').val(resp.value2);
+$('#urinetest').val(resp.value2);
+$('#radiotest').val(resp.value2);
+$('#semen').val(resp.value2);
+$('#other').val(resp.value2);
+
+ 
+
+
+ 
+}); 
+
+}); 
+
+	
+ 
 	 
 	
     </script> 
