@@ -131,7 +131,10 @@
  
 	<script>
 	 
-document.getElementById("aptdate").min = new Date().getFullYear() + "-" +  parseInt(new Date().getMonth() + 1 ) + "-" + new Date().getDate()
+//document.getElementById("aptdate").min = new Date().getMonth()+1 + "-" +  new Date().getDate()  + "-" + new Date().getFullYear()
+
+aptdate.min = new Date().toISOString().split("T")[0];
+
 
 $(document).ready(function(){
  
